@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20141203165929) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "content_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "google_uid"

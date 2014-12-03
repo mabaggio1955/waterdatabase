@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @content.title
+p
+  strong Description:
+  = @content.description
+p
+  strong Locale:
+  = @content.locale
+
+= link_to 'Edit', edit_content_path(@content)
+'|
+= link_to 'Back', contents_path

@@ -1,9 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :content do
-    title "MyString"
-    description "MyText"
-    category
+  factory :document do
+    # file ""
+    content nil
   end
 end

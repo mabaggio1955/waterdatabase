@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :content do
     title "MyString"
     description "MyText"
-    category
+    category_id { create(:category).id }
   end
 end

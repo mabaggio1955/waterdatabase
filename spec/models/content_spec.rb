@@ -7,4 +7,10 @@ RSpec.describe Content, :type => :model do
     it { is_expected.to ensure_length_of(:title).is_at_most(255) }
     it { is_expected.to ensure_length_of(:locale).is_at_most(255) }
   end
+
+  describe "#locale" do
+    it "has the current locale by default" do
+      expect(subject.locale).to eq(I18n.locale)
+    end
+  end
 end

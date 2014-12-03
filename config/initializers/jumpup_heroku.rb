@@ -1,3 +1,3 @@
 Jumpup::Heroku.configure do |config|
-  config.app = 'waterdatabase'
+  config.app = 'water_database'
 end if Rails.env.development?

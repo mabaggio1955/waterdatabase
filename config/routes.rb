@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :contents do
     resources :documents, only: [:destroy, :create]
   end
-=======
+
   match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get
   match "/auth/failure" => "sessions#failure", as: :auth_failure, via: :get
   match "/logout" => "sessions#destroy", as: :logout, via: :get
   resources :sessions, only: [:create, :destroy]
-
-  resources :contents
->>>>>>> omniauth finished
 
   get 'pages/home'
   # The priority is based upon order of creation: first created -> highest priority.

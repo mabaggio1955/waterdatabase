@@ -19,6 +19,7 @@ gem 'neat',                   '1.6.0'
 gem 'bitters',                '0.10.1'
 gem 'refills',                '0.0.2'
 gem 'paperclip',              '4.2.0'
+gem 'aws-sdk',                '1.59.0'
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.2'

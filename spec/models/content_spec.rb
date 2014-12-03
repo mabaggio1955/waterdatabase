@@ -8,6 +8,10 @@ RSpec.describe Content, :type => :model do
     it { is_expected.to ensure_length_of(:locale).is_at_most(255) }
   end
 
+  describe "associations" do
+    it { is_expected.to belong_to(:category) }
+  end
+
   describe "#locale" do
     it "has the current locale by default" do
       expect(subject.locale).to eq(I18n.locale)

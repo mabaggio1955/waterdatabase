@@ -40,7 +40,11 @@ ActiveRecord::Schema.define(version: 20141203165929) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "documents", ["content_id"], name: "index_documents_on_content_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -51,7 +55,5 @@ ActiveRecord::Schema.define(version: 20141203165929) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "documents", ["content_id"], name: "index_documents_on_content_id", using: :btree
 
 end

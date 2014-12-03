@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :contents
+  resources :contents do
+    resources :documents, only: [:destroy, :create]
+  end
 
   get 'pages/home'
   # The priority is based upon order of creation: first created -> highest priority.

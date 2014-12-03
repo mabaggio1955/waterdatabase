@@ -21,7 +21,6 @@ gem 'refills',                '0.0.2'
 gem 'paperclip',              '4.2.0'
 gem 'aws-sdk',                '1.59.0'
 gem 'omniauth-google-oauth2', '0.2.2'
->>>>>>> omniauth config
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.2'

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
   validates :name, :email, presence: true
   validates :email, :google_uid, uniqueness: true
 
@@ -15,4 +16,6 @@ class User < ActiveRecord::Base
     user.save
     user
   end
+=======
+>>>>>>> user model
 end

@@ -5,7 +5,7 @@ table
     tr
       th Title
       th Description
-      th Locale
+      th Category
       th
       th
       th
@@ -15,7 +15,7 @@ table
       tr
         td = content.title
         td = content.description
-        td = content.locale
+        td = content.category.name
         td = link_to 'Show', content
         td = link_to 'Edit', edit_content_path(content)
         td = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete

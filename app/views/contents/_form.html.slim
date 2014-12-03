@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
+    = f.association :category
     = f.input :title
     = f.input :description
-    = f.input :locale
 
   .form-actions
     = f.button :submit

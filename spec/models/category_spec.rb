@@ -17,4 +17,43 @@ RSpec.describe Category, :type => :model do
       expect(subject.locale).to eq(I18n.locale)
     end
   end
+
+  describe ".create_defaults" do
+    before do
+      described_class.create_defaults!
+    end
+
+    let(:expected_ptbr) do
+      [
+        "Eventos",
+        "Inovações em tecnologia",
+        "Comunidade",
+        "Especificações",
+        "Editora",
+        "Notícias",
+        "Literatura",
+        "Padronização",
+        "Treinamentos",
+        "O certo e o errado"
+      ]
+    end
+
+    let(:expected_es) do
+      [
+        "Eventos",
+        "Las innovaciones en la tecnología",
+        "Comunidad",
+        "Especificaciones",
+        "Editorial",
+        "Noticias",
+        "Literatura",
+        "Estandarización",
+        "Entrenamiento",
+        "El bien y el mal"
+      ]
+    end
+
+    it { expect(described_class.unscoped.where(locale: :"pt-BR").pluck(:name)).to match_array(expected_ptbr) }
+    it { expect(described_class.unscoped.where(locale: :es).pluck(:name)).to match_array(expected_es) }
+  end
 end

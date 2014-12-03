@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+unless Category.unscoped.exists?
+  puts "Creating default categories"
+  Category.create_defaults!
+  puts "Categories created"
+end

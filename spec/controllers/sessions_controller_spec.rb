@@ -64,7 +64,6 @@ RSpec.describe SessionsController, :type => :controller do
       end
       it { expect(session[:user_id]).to be_nil }
       it { expect(flash[:notice]).to be_nil }
-      it { expect(flash[:alert]).to eq("Não foi possível autenticar.") }
       it { expect(response).to redirect_to(root_path) }
     end
   end

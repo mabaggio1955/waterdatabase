@@ -4,6 +4,5 @@ FactoryGirl.define do
   factory :content do
     title "MyString"
     description "MyText"
-    locale "MyString"
   end
 end

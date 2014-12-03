@@ -1,10 +1,8 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
   validates :name, :email, presence: true
   validates :email, :google_uid, uniqueness: true
 
   def self.find_or_create_with_omniauth(auth)
-    p auth
     user = self.find_or_create_by(email: auth.info.email, google_uid: auth.uid.to_s)
     user.assign_attributes({
       google_uid: auth.uid,
@@ -16,6 +14,3 @@ class User < ActiveRecord::Base
     user.save
     user
   end
-=======
->>>>>>> user model
-end

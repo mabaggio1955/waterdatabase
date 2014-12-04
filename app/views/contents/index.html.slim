@@ -15,7 +15,7 @@
           = link_to 'Edit', edit_content_path(content)
           = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-        footer
+        .content-footer
           em 3
           label anexos
           = link_to 'Fazer download', '#'
@@ -23,5 +23,5 @@
 .wrapper
   = link_to 'New Content', new_content_path, :class => 'button'
 
-.wrapper
+footer
   hr.waves-primary

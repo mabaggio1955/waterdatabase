@@ -32,4 +32,19 @@
 //Common styles
 body {
 	background: linear-gradient(#969aa6, #605c6e) fixed;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background: image_url('bg-underwater.jpg') top center no-repeat;
+  margin-top: 80px;
+  min-height: 400px;
+  position: relative;
+
+  hr.waves-primary {
+    top: -71px;
+    position: absolute;
+    width: 100%;
+  }
 }

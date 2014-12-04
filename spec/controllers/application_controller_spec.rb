@@ -11,6 +11,15 @@ RSpec.describe ApplicationController, :type => :controller do
 
           it { expect(controller.send(:current_user)).to eq(user) }
         end
+        context 'invalid_id' do
+          before { session[:user_id] = 666 }
+          it { expect(controller.send(:current_user)).to be_nil }
+          it {
+            expect {
+              controller.send(:current_user)
+            }.to change { session[:user_id] }.from(666).to(nil)
+          }
+        end
       end
       context ':logged_out' do
         before { session[:user_id] = nil }

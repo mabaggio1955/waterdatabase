@@ -37,20 +37,13 @@
         margin-right: 10px;
         margin-top: -21px;
 
-        em {
-          @include border-radius(50%);
-          background: lighten($medium-gray,40);
-          border: 2px solid white;
+        .icon {
           color: white;
           display: inline-block;
           font-size: 24px;
           font-style: normal;
           font-weight: bold;
-          height: 42px;
           line-height: 28px;
-          text-align: center;
-          vertical-align: middle;
-          width: 42px;
         }
       }
 

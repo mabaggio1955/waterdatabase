@@ -1,11 +1,12 @@
-section.content-primary
+section.headline
   .wrapper
-    .icon.icon-category
+    .icon-section
+      .icon.icon-category
     h1 Category name
 
 = render 'search_bar'
 
-section
+section.content-primary
   .wrapper
     .content-list
       - @contents.each do |content|
@@ -24,7 +25,7 @@ section
 
           .content-footer
             .attachment
-              em 3
+              .icon 3
             .attachment-label
               label anexos
               = link_to 'Fazer download', '#'

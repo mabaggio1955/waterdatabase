@@ -30,6 +30,17 @@
 }
 
 //Common styles
+.icon {
+  @include border-radius(50%);
+  background: lighten($medium-gray,40);
+  border: 2px solid white;
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+//Page styles
 body {
 	background:
     radial-gradient(rgba(white,.6), rgba(white,0)),
@@ -57,13 +68,6 @@ header {
     li {
       display: inline-block;
       margin-left: 10px;
-      .avatar {
-        @include border-radius(50%);
-        background: $light-gray;
-        border: 2px solid white;
-        height: 42px;
-        width: 42px;
-      }
     }
 
     &:after { @include cleaner; }

@@ -72,6 +72,13 @@ hr {
   margin: $base-spacing 0;
 }
 
+hr.waves-primary {
+  background: image_url('gph-wave-split.svg') center no-repeat;
+  border: none;
+  height: 83px;
+  margin: 30px 0;
+}
+
 img,
 picture {
   margin: 0;

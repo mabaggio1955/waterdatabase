@@ -10,6 +10,20 @@ p
   strong Category:
   = @content.category.name
 
+h3 Documents
+
+ul
+  - @content.documents.each do |document|
+    li
+      = link_to document.file_file_name, document.file.url, target: :_blank
+      = link_to "X", [@content, document], method: :delete, style: "color: red; margin-left: 20px;", data: { confirm: "Deseja remover o documento?" }
+
+= form_for [@content, Document.new] do |f|
+  = f.s3_file_field :file
+  = f.submit "Enviar arquivo"
+
 = link_to 'Edit', edit_content_path(@content)
 '|
 = link_to 'Back', contents_path
+
+= render partial: "document_js_tmpl"

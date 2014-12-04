@@ -7,7 +7,7 @@ Paperclip::Attachment.default_options.merge!({
     :access_key_id => ENV['AMAZON_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AMAZON_SECRET_ACCESS_KEY']
   },
-  :path => ":class/:attachment/:id/:locale/:filename"
+  :path => ":locale/:class/:attachment/:id/:filename"
 }) unless Rails.env.test?
 
 Paperclip.interpolates :locale do |attachment, style|

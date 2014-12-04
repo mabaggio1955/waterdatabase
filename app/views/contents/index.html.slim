@@ -9,7 +9,7 @@
           h2 = content.title
           p
             = truncate(content.description, length: 140)
-            = content.category.name
+            //= content.category.name
 
           = link_to 'Show', content
           = link_to 'Edit', edit_content_path(content)

@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_filter :authenticate!
 
   def create
     @content = Content.find(params[:content_id])

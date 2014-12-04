@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
+  before_filter :authenticate!
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index

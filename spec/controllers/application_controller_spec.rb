@@ -37,6 +37,7 @@ RSpec.describe ApplicationController, :type => :controller do
         it { expect(controller.send(:user_signed_in?)).to be_falsey }
       end
     end
+
     describe 'authenticate!' do
       context 'logged_in' do
         before { session[:user_id] = user.id }

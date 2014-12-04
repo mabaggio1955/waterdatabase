@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
 
+
   def create
     @content = Content.find(params[:content_id])
     @document = Document.new(document_params)

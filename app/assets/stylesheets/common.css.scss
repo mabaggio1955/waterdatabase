@@ -22,6 +22,12 @@
   visibility: hidden;
 }
 
+// Extra grid setting
+.master-container { width: 100%; }
+.wrapper {
+  @include outer-container;
+}
+
 //Common styles
 body {
 	background: linear-gradient(#969aa6, #605c6e) fixed;

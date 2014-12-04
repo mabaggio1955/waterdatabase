@@ -1,7 +1,11 @@
 section.content-primary
   .wrapper
+    .icon.icon-category
     h1 Category name
 
+= render 'search_bar'
+
+section
   .wrapper
     .content-list
       - @contents.each do |content|

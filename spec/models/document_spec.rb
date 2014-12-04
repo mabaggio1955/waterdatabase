@@ -4,6 +4,7 @@ RSpec.describe Document, :type => :model do
   describe "validations" do
     it { is_expected.to have_attached_file(:file) }
     it { is_expected.to validate_attachment_content_type(:file) }
+    it { is_expected.to validate_presence_of(:content) }
   end
 
   describe "associations" do

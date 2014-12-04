@@ -48,7 +48,7 @@ RSpec.describe SessionsController, :type => :controller do
         do_action
       end
       it { expect(session[:user_id]).to eq(user.id) }
-      it { expect(response).to redirect_to(root_path) }
+      it { expect(response).to redirect_to(contents_path) }
     end
     context 'error' do
       before do
@@ -66,6 +66,17 @@ RSpec.describe SessionsController, :type => :controller do
       it { expect(flash[:notice]).to be_nil }
       it { expect(response).to redirect_to(root_path) }
     end
+  end
+
+
+  describe 'failure' do
+    def do_action
+      get :failure
+    end
+    before { do_action }
+    it { expect(flash[:alert]).to eq("Não foi possível autenticar.") }
+    it { expect(flash[:notice]).to be_nil }
+    it { expect(response).to redirect_to(root_path) }
   end
 
   describe "GET destroy" do

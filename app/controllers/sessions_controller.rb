@@ -2,7 +2,16 @@ class SessionsController < ApplicationController
   def create
     user = User.find_or_create_with_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to root_path
+    if user.persisted?
+      session[:user_id] = user.id
+      redirect_to contents_path, notice: "Bem-vindo!"
+    else
+      failure
+    end
+  end
+
+  def failure
+    redirect_to root_path, alert: "Não foi possível autenticar."
   end
 
   def destroy

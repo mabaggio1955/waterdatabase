@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe ContentsController, :type => :controller do
 
   describe "GET #index" do
-    it_should_behave_like "authentication_required_action"
     let!(:content) { create(:content) }
 
     def action

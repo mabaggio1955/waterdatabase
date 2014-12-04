@@ -31,7 +31,9 @@
 
 //Common styles
 body {
-	background: linear-gradient(#969aa6, #605c6e) fixed;
+	background:
+    radial-gradient(rgba(white,.6), rgba(white,0)),
+    linear-gradient(#969aa6, #605c6e) fixed;
   padding: 0;
   margin: 0;
 }

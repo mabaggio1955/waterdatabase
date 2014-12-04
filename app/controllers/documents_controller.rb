@@ -4,6 +4,7 @@ class DocumentsController < ApplicationController
   def create
     @content = Content.find(params[:content_id])
     @document = Document.new(document_params)
+    @document.content = @content
 
     respond_to do |format|
       if @document.save
@@ -28,6 +29,6 @@ class DocumentsController < ApplicationController
 
   private
     def document_params
-      params.require(:document).permit(:file)
+      params.require(:document).permit(:file, :file_direct_url)
     end
 end

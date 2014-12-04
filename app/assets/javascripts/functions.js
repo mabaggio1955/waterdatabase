@@ -1,7 +1,7 @@
 function shortenContentList(obj) {
-  var $text = $(obj).children("p").html();
+  var $text = $(obj).find("p").html();
   var $ret = shortenText($text,140);
-  $(obj).children("p").html($ret);
+  $(obj).find("p").html($ret);
 }
 
 function shortenText(text,maxLength) {

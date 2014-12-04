@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   has_attached_file :file
   validates_attachment_content_type :file, :content_type => /\A.*\Z/
-  validate :content, presence: true
+  validates :content, presence: true
   belongs_to :content
 
   # download_from_direct_url_with_delay :file

@@ -1,27 +1,25 @@
-.wrapper
-  h1 Category name
+section.content-primary
+  .wrapper
+    h1 Category name
 
-.wrapper
-  .content-list
-    - @contents.each do |content|
-      li
-        article
-          h2 = content.title
-          p
-            = truncate(content.description, length: 140)
-            //= content.category.name
+  .wrapper
+    .content-list
+      - @contents.each do |content|
+        li
+          article
+            h2 = content.title
+            p
+              = truncate(content.description, length: 140)
+              //= content.category.name
 
-          = link_to 'Show', content
-          = link_to 'Edit', edit_content_path(content)
-          = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete
+            = link_to 'Show', content
+            = link_to 'Edit', edit_content_path(content)
+            = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-        .content-footer
-          em 3
-          label anexos
-          = link_to 'Fazer download', '#'
+          .content-footer
+            em 3
+            label anexos
+            = link_to 'Fazer download', '#'
 
-.wrapper
-  = link_to 'New Content', new_content_path, :class => 'button'
-
-footer
-  hr.waves-primary
+  .wrapper
+    = link_to 'New Content', new_content_path, :class => 'button'

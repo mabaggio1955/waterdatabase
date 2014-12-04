@@ -73,18 +73,29 @@ header {
 nav.search-bar {
   border-bottom: 1px dashed $medium-gray;
   border-top: 1px solid rgba(white,.25);
+  margin-bottom: 30px;
 
   ul.alphabetic-list {
     float: left;
+    margin: 10px 0;
+
     li {
       display: inline-block;
-      margin-right: 5px;
       a {
-        @include border-radius(50%);
+        @include border-radius(10px);
+        display: block;
+        height: 22px;
+        min-width: 22px;
         color: white;
+        font-size: 14px;
+        padding: 1px 5px;
         text-transform: uppercase;
 
-        &:hover { background-image: $deep-blue; }
+        &.current,
+        &:hover {
+          background: $deep-blue;
+        }
+
         &.alphabetic-reset { text-transform: none; }
       }
     }
@@ -101,13 +112,37 @@ nav.search-bar {
     input[type='text'] {
       background: none;
       border: none;
+      color: white;
       margin: 0;
+      padding: 5px 8px;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba($dark-gray,.1);
+        border: none;
+        outline: 0;
+      }
+
+      &::-webkit-input-placeholder {
+         font-style: italic;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+         font-style: italic;
+      }
+      &::-moz-placeholder {  /* Firefox 19+ */
+         font-style: italic;
+      }
+      &:-ms-input-placeholder {
+         font-style: italic;
+      }
     }
 
     input[type='submit'] {
       background: none;
       border: none;
       margin: 0;
+      padding: 5px 8px;
       position: absolute;
       right: 0;
       top: 0;

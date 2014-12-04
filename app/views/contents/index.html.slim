@@ -8,6 +8,7 @@ section.content-primary
         li
           article
             h2 = content.title
+            hr.waves-secondary 
             p
               = truncate(content.description, length: 140)
               //= content.category.name

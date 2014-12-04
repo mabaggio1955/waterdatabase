@@ -4,37 +4,37 @@ section.headline
   .wrapper
     .icon-section
       .icon
-    h1 Category name
+    h1 = @content.category.name
 
 = render 'search_bar'
 
 section.content-primary
   .wrapper
+    .content-box
+      article
+        small 25 de Março, 2014
+        h2 = @content.title
+        hr.waves-secondary 
+        p
+          = @content.description
 
-    p
-      strong Title:
-      = @content.title
-    p
-      strong Description:
-      = @content.description
-    p
-      strong Category:
-      = @content.category.name
+      .content-footer
+        ul
+          - @content.documents.each do |document|
+            li
+              .attachment
+                .icon PDF
+              .attachment-label
+                label = document.file_file_name
+                = link_to document.file_file_name, document.file.url, target: :_blank
+                = link_to "X", [@content, document], method: :delete, style: "color: red; margin-left: 20px;", data: { confirm: "Deseja remover o documento?" }
 
-    h3 Documents
+        = form_for [@content, Document.new] do |f|
+          = f.s3_file_field :file
+          = f.submit "Enviar arquivo"
 
-    ul
-      - @content.documents.each do |document|
-        li
-          = link_to document.file_file_name, document.file.url, target: :_blank
-          = link_to "X", [@content, document], method: :delete, style: "color: red; margin-left: 20px;", data: { confirm: "Deseja remover o documento?" }
+        = link_to 'Edit', edit_content_path(@content)
+        '|
+        = link_to 'Back', contents_path
 
-    = form_for [@content, Document.new] do |f|
-      = f.s3_file_field :file
-      = f.submit "Enviar arquivo"
-
-    = link_to 'Edit', edit_content_path(@content)
-    '|
-    = link_to 'Back', contents_path
-
-    = render partial: "document_js_tmpl"
+        = render partial: "document_js_tmpl"

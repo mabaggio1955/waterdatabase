@@ -8,9 +8,9 @@ section.headline
 
 section.content-primary
   .wrapper
-    .content-list
+    ul.content-list
       - @contents.each do |content|
-        li
+        li.content-box
           article
             h2 = content.title
             hr.waves-secondary 

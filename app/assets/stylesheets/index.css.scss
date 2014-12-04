@@ -2,23 +2,46 @@
   display: block;
 }
 
+.content-box {
+  @include border-radius(5px);
+  margin-bottom: 30px;
+
+  article {
+    @include border-radius(5px 5px 0 0);
+    background: white;
+    padding: 30px;
+    text-align: center;
+
+    p {
+      text-align: left;
+    }
+
+    small {
+      color: $light-gray;
+      font-size: 16px;
+    }
+  }
+
+  .content-footer {
+    @include border-radius(0 0 5px 5px);
+    background: $light-gray;
+    padding: 30px;
+    text-align: left;
+  }
+}
+
 .content-list {
   li {
     @include span-columns(4);
     @include omega(3n);
-    @include border-radius(5px);
-    margin-bottom: 30px;
 
     article {
-      @include border-radius(5px 5px 0 0);
-      background: white;
-      padding: 30px;
-      text-align: center;
-
       h2 {
         font-size: 22px;
         font-weight: bold;
       }
+
+      p { text-align: center; }
 
       ul.content-actions-list {
         display: block;
@@ -31,10 +54,7 @@
     }
 
     .content-footer {
-      @include border-radius(0 0 5px 5px);
-      background: $light-gray;
       padding: 0 30px 50px 30px;
-      text-align: left;
 
       .attachment {
         float: left;

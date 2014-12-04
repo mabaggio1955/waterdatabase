@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
   ensure_security_headers # See more: https://github.com/twitter/secureheaders
   before_action :set_locale
 
-  helper_method :current_user, :user_signed_in?
+  helper_method :current_user, :user_signed_in?, :is_admin?
+
+  def ensure_admin!
+    redirect root_path unless is_admin?
+  end
 
   def current_user
     @current_user ||= ::User.find(session[:user_id]) if session[:user_id]
@@ -28,6 +32,10 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def is_admin?
+    ENV['ADMIN_USERS'].split(',').include?(current_user.email)
   end
 
 end

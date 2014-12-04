@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-
+  before_action :ensure_admin!, only: [:new, :update, :create, :destroy]
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index

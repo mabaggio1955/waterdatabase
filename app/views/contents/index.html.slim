@@ -13,15 +13,15 @@ section.content-primary
         li.content-box
           article
             h2 = content.title
-            hr.waves-secondary 
+            hr.waves-secondary
             p
               = truncate(content.description, length: 140)
               //= content.category.name
 
             ul.content-actions-list
               li = link_to 'Show', content
-              li = link_to 'Edit', edit_content_path(content)
-              li = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete
+              li = link_to 'Edit', edit_content_path(content) if is_admin?
+              li = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete if is_admin?
 
           .content-footer
             .attachment
@@ -31,4 +31,4 @@ section.content-primary
               = link_to 'Fazer download', '#'
 
   .wrapper
-    = link_to 'New Content', new_content_path, :class => 'button'
+    = link_to 'New Content', new_content_path, :class => 'button' if is_admin?

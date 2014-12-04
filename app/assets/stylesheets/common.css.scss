@@ -26,6 +26,7 @@
 .master-container { width: 100%; }
 .wrapper {
   @include outer-container;
+  text-align: center;
 }
 
 //Common styles

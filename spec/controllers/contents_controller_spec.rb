@@ -4,19 +4,41 @@ RSpec.describe ContentsController, :type => :controller do
 
   describe "GET #index" do
     let!(:content) { create(:content) }
+    let(:params) do
+      {}
+    end
+
     it_should_behave_like "authentication_required_action"
 
     def action
-      get :index
+      get :index, params
     end
 
     context 'signed_in' do
-      before { login! }
-      before { action }
+      let!(:category) { create(:category, name: "mycategory") }
+      let!(:content_2) { create(:content, category: category) }
 
-      it { is_expected.to respond_with(:success) }
-      it { is_expected.to render_template(:index) }
-      it { expect(assigns(:contents)).to eq([content]) }
+      before { login! }
+
+      context "contents from a category" do
+        let(:params) do
+          { category_id: category.to_param }
+        end
+
+        before { action }
+
+        it { is_expected.to respond_with(:success) }
+        it { is_expected.to render_template(:index) }
+        it { expect(assigns(:contents)).to match_array([content_2]) }
+      end
+
+      context "contents from all categories" do
+        before { action }
+
+        it { is_expected.to respond_with(:success) }
+        it { is_expected.to render_template(:index) }
+        it { expect(assigns(:contents)).to match_array([content, content_2]) }
+      end
     end
   end
 

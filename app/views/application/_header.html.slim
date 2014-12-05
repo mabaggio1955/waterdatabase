@@ -11,7 +11,8 @@ header
           li
             p = current_user.name
           li
-            .icon a
+            .icon
+              = image_tag(current_user.image_url)
           li.menu-top
             = image_tag("icons/icon-menu.svg", width: "20", heigh:"auto" ,class: "menu_icon")
             ul.user-nav-secondary

@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :user_signed_in?, :is_admin?
 
-  def ensure_admin!
-    redirect root_path unless is_admin?
-  end
-
   def current_user
     @current_user ||= ::User.find(session[:user_id]) if session[:user_id]
   rescue ActiveRecord::RecordNotFound
@@ -35,7 +31,11 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin?
-    ENV['ADMIN_USERS'].split(',').include?(current_user.email)
+    ENV['ADMIN_USERS'].split(',').include?(current_user && current_user.email)
+  end
+
+  def ensure_admin!
+    redirect_to(root_path, notice: "Você não tem acesso a essa área") unless is_admin?
   end
 
 end

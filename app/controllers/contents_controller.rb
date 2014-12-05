@@ -1,4 +1,6 @@
 class ContentsController < ApplicationController
+  before_filter :authenticate!
+
   before_action :ensure_admin!, only: [:new, :update, :create, :destroy]
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 

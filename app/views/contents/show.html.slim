@@ -1,14 +1,10 @@
-section.headline
-  .wrapper
-    .icon
-    h1 = @content.category.name
-
 = render 'search_bar'
 
 section.content-primary
   .wrapper
     .content-box
       article
+        big = @content.category.name
         small 25 de Março, 2014
         h2 = @content.title
         hr.waves-secondary 

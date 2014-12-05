@@ -29,6 +29,11 @@
   text-align: center;
 }
 
+//Flash notices style
+#notice {
+  margin: 0;
+}
+
 //Common styles
 .icon {
   @include border-radius(50%);
@@ -75,8 +80,20 @@ header {
 }
 
 .headline {
-  .icon {
-    margin: 0 auto;
+  padding-top: 40px;
+  position: relative;
+  h1 { margin-bottom: 10px; }
+  .icon-wrapper {
+    background: image_url('gph-double-wave-1.svg') center no-repeat;
+    left: 50%;  
+    margin-left: -75px;
+    padding: 15px 0;
+    position: absolute;
+    top: -38px;
+    width: 150px;
+    .icon {
+      margin: 0 auto;
+    }
   }
 }
 

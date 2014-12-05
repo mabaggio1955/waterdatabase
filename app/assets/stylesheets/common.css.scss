@@ -29,11 +29,6 @@
   text-align: center;
 }
 
-//Flash notices style
-#notice {
-  margin: 0;
-}
-
 //Common styles
 .icon {
   @include border-radius(50%);
@@ -43,40 +38,6 @@
   width: 42px;
   text-align: center;
   vertical-align: middle;
-}
-
-//Page styles
-body {
-	background:
-    radial-gradient(rgba(white,.6), rgba(white,0)),
-    linear-gradient(#969aa6, #605c6e) fixed;
-  padding: 0;
-  margin: 0;
-}
-
-header {
-  background: image_url('bg-topbar.png') right center no-repeat, linear-gradient(to right, #1671b8, #89daf4);
-
-  h1.logo {
-    background: image_url('waterdb-logo.svg') top center no-repeat;
-    content: " ";
-    display: block;
-    float: left;
-    height: auto;
-    margin: 20px 0;
-    width: 150px;
-  }
-
-  ul.user-nav-list {
-    float: right;
-    margin: 20px 0;
-    li {
-      display: inline-block;
-      margin-left: 10px;
-    }
-
-    &:after { @include cleaner; }
-  }
 }
 
 .headline {
@@ -97,98 +58,10 @@ header {
   }
 }
 
-nav.search-bar {
-  border-bottom: 1px dashed $medium-gray;
-  border-top: 1px solid rgba(white,.25);
-  margin-bottom: 0;
-
-  ul.alphabetic-list {
-    float: left;
-    margin: 10px 0;
-
-    li {
-      display: inline-block;
-      a {
-        @include border-radius(10px);
-        display: block;
-        height: 22px;
-        min-width: 22px;
-        color: white;
-        font-size: 14px;
-        padding: 1px 5px;
-        text-transform: uppercase;
-
-        &.current,
-        &:hover {
-          background: $deep-blue;
-        }
-
-        &.alphabetic-reset { text-transform: none; }
-      }
-    }
-  }
-
-  form.search-form {
-    @include border-radius(3px);
-    border: 2px solid white;
-    float: right;
-    margin: 5px 0;
-    padding: 0;
-    position: relative;
-
-    input[type='text'] {
-      background: none;
-      border: none;
-      color: white;
-      margin: 0;
-      padding: 5px 8px;
-
-      &:active,
-      &:focus,
-      &:hover {
-        background: rgba($dark-gray,.1);
-        border: none;
-        outline: 0;
-      }
-
-      &::-webkit-input-placeholder {
-         font-style: italic;
-      }
-      &:-moz-placeholder { /* Firefox 18- */
-         font-style: italic;
-      }
-      &::-moz-placeholder {  /* Firefox 19+ */
-         font-style: italic;
-      }
-      &:-ms-input-placeholder {
-         font-style: italic;
-      }
-    }
-
-    input[type='submit'] {
-      background: none;
-      border: none;
-      margin: 0;
-      padding: 5px 8px;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-
-    &:after { @include cleaner; }
-  }
-}
-
-footer {
-  background: image_url('bg-underwater.jpg') top center no-repeat;
-  margin-top: 80px;
-  min-height: 400px;
-  padding-top: 60px;
-  position: relative;
-
-  hr.waves-primary {
-    top: -71px;
-    position: absolute;
-    width: 100%;
-  }
+body {
+	background:
+    radial-gradient(rgba(white,.6), rgba(white,0)),
+    linear-gradient(#969aa6, #605c6e) fixed;
+  padding: 0;
+  margin: 0;
 }

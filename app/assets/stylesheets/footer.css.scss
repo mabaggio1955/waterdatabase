@@ -1,0 +1,13 @@
+footer {
+  background: image_url('bg-underwater.jpg') top center no-repeat;
+  margin-top: 80px;
+  min-height: 400px;
+  padding-top: 60px;
+  position: relative;
+
+  hr.waves-primary {
+    top: -71px;
+    position: absolute;
+    width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+header {
+  background: image_url('bg-topbar.png') right center no-repeat, linear-gradient(to right, #1671b8, #89daf4);
+
+  h1.logo {
+    background: image_url('waterdb-logo.svg') top center no-repeat;
+    content: " ";
+    display: block;
+    float: left;
+    height: auto;
+    margin: 20px 0;
+    width: 150px;
+  }
+
+  ul.user-nav-list {
+    float: right;
+    margin: 20px 0;
+    li {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    &:after { @include cleaner; }
+  }
+}

@@ -9,3 +9,25 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap;
 }
+
+.button.alert,
+button.alert,
+input[type="submit"].alert {
+  background: #f3645d;
+  border: none;
+  cursor: pointer;
+  font-size: $base-font-size;
+  padding: 5px 10px;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:hover {
+    background-color: lighten(#f3645d,5);
+    color: white;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

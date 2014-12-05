@@ -1,8 +1,15 @@
-h1 Editing content
+= render 'search_bar'
 
-== render 'form'
+section.content-primary
+  .wrapper
+    .content-box
+      article
+        h1 Editing content
+        hr.waves-secondary 
 
-= link_to 'Show', @content
-'|
-= link_to 'Back', contents_path
+        == render 'form'
 
+    .content-footer
+      = link_to 'Show', @content
+      '|
+      = link_to 'Back', contents_path

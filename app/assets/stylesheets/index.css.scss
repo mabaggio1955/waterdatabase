@@ -42,6 +42,77 @@
     background: $light-gray;
     padding: 50px;
     text-align: left;
+
+    .button.alert { margin-left: 10px; }
+
+    h3 {
+      border-bottom: 1px solid darken($light-gray,5);
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    form {
+      display: block;
+      margin: 0;
+      padding-top: 0;
+      .file-wrapper {
+        display: block;
+        &:after { @include cleaner; }
+        .progress-bar {
+          @include border-radius(3px);
+          background: $blue;
+          color: white;
+        }
+        .s3ff_fileinput_wrap {
+          display: inline-block;
+          float: left;
+          margin: 0 !important;
+          width: 50%;
+        }
+        label.s3ff_fileinput_label {
+          display: inline-block;
+          float: left;
+          margin: 0 !important;
+          text-align: right;
+          width: 50% !important;
+        }
+      }      
+      input[type='submit'] {
+        display: block;
+        margin: 0;
+      }
+    }
+
+    ul.attachment-list {
+      li {
+        border-bottom: 1px solid lighten($medium-gray,30);
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        &:last-of-type {
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .attachment {
+          display: inline-block;
+          width: 10%;
+        }
+
+        label {
+          display: inline-block;
+          width: 60%;
+        }
+
+        .actions {
+          display: inline-block;
+          text-align: right;
+          width: 30%;
+        }
+      }
+    }
   }
 }
 
@@ -55,6 +126,10 @@
       h2 {
         font-size: 22px;
         font-weight: bold;
+        a {
+          color: $dark-gray;
+          &:hover { color: $blue; }
+        }
       }
 
       p {

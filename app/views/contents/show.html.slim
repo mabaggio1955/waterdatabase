@@ -7,6 +7,7 @@ section.content-primary
         big = @content.category.name
         small 25 de Março, 2014
         h2 = @content.title
+
         hr.waves-secondary 
         p
           = @content.description
@@ -23,11 +24,15 @@ section.content-primary
             li
               .attachment
                 .icon PDF
-              .attachment-label
-                label = document.file_file_name
-                = link_to 'Baixar arquivo', document.file.url, target: :_blank
-                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: "Deseja remover o documento?" }, :class => 'button'
 
-        = form_for [@content, Document.new] do |f|
-          = f.s3_file_field :file
-          = f.submit "Enviar arquivo"
+              label = document.file_file_name
+
+              .actions
+                = link_to 'Baixar arquivo', document.file.url, target: :_blank
+                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: "Deseja remover o documento?" }, :class => 'button alert'
+          li
+            h3 Escolha anexos para esse conteúdo
+            = form_for [@content, Document.new] do |f|
+              .file-wrapper
+                = f.s3_file_field :file
+              = f.submit "Enviar arquivo"

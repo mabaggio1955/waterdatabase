@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :documents, only: [:destroy, :create]
     end
 
+    resources :categories, only: [:index]
+
     match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get
     match "/auth/failure" => "sessions#failure", as: :auth_failure, via: :get
     match "/logout" => "sessions#destroy", as: :logout, via: :get

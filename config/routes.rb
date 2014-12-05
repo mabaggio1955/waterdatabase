@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   root 'pages#home'
-  get '/:locale' => 'contents#index'
+  get '/:locale' => 'categories#index'
 end

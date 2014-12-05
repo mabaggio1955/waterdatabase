@@ -25,7 +25,7 @@ RSpec.describe PagesController, :type => :controller do
         session[:user_id] = user.id
         do_action
       end
-      it { expect(response).to redirect_to(contents_path) }
+      it { expect(response).to redirect_to(categories_path) }
     end
   end
 

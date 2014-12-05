@@ -13,8 +13,6 @@ pt-BR:
     attributes:
         document:
           file: Arquivo
-        category:
-          name: Nome
         content:
           title: Título
           description: Descrição
@@ -43,4 +41,11 @@ pt-BR:
       confirm: 'Você tem certeza?'
       download: 'Baixar'
       attachments: 'Anexos'
+    show:
+      edit: Editar
+      back: Voltar
+      choose_files: Escolha anexos para esse conteúdo
+      confirm: Deseja remover o documento?
+    document_js_tmpl:
+      remove: Remover
 

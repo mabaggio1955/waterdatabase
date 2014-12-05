@@ -5,7 +5,7 @@ section.content-primary
     .content-box
       article
         big = @content.category.name
-        small 25 de Março, 2014
+        small = l(@content.created_at, format: :short)
         h2 = @content.title
 
         hr.waves-secondary 
@@ -13,9 +13,9 @@ section.content-primary
           = @content.description
 
         ul.content-actions-list
-          li = link_to 'Edit', edit_content_path(@content)
-          li = link_to 'Back', contents_path
-        
+          li = link_to t('.edit'), edit_content_path(@content)
+          li = link_to t('.back'), contents_path
+
         = render partial: "document_js_tmpl"
 
       .content-footer
@@ -29,10 +29,10 @@ section.content-primary
 
               .actions
                 = link_to 'Baixar arquivo', document.file.url, target: :_blank
-                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: "Deseja remover o documento?" }, :class => 'button alert'
+                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: t('.confirm') }, :class => 'button alert'
           li
-            h3 Escolha anexos para esse conteúdo
+            h3 = t('.choose_files')
             = form_for [@content, Document.new], :html => {:class => 'form-attachment'} do |f|
               .file-wrapper
                 = f.s3_file_field :file
-              = f.submit "Enviar arquivo"
+              = f.submit

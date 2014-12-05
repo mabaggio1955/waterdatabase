@@ -5,16 +5,14 @@ es:
         one: Documento
         other: Documentos
       category:
-        one: Categoria
-        other: Categorias
+        one: Categoría
+        other: Categorías
       content:
-        one: Conteúdo
-        other: Conteúdos
+        one: Contenido
+        other: Contenidos
     attributes:
         document:
           file: Arquivo
-        category:
-          name: Nome
         content:
           title: Título
           description: Descrição
@@ -43,4 +41,11 @@ es:
       confirm: 'Estás seguro?'
       download: 'Descargar'
       attachments: 'Adjuntos'
+    show:
+      edit: Editar
+      back: Volver
+      choose_files: Elija los archivos adjuntos a este contenido
+      confirm: ¿Quieres eliminar el documento?
+    document_js_tmpl:
+      remove: Quitar
 

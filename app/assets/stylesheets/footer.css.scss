@@ -1,9 +1,19 @@
 footer {
   background: image_url('bg-underwater.jpg') top center no-repeat;
+  color: white;
   margin-top: 80px;
   min-height: 400px;
-  padding-top: 60px;
+  padding-top: 80px;
   position: relative;
+
+  small {
+    color: rgba(white,.5);
+    text-transform: uppercase;
+  }
+
+  h4 { color: darken($deep-blue,10); }
+
+  p { color: rgba(white,.75); }
 
   hr.waves-primary {
     top: -71px;

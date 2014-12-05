@@ -8,26 +8,37 @@ section.headline
 
 section.content-primary
   .wrapper
-    ul.content-list
-      - @contents.each do |content|
-        li.content-box
-          article
-            h2 = link_to content.title, content
-            hr.waves-secondary
-            p
-              = truncate(content.description, length: 140)
-              //= content.category.name
+    - if @contents.any?
+      ul.content-list
+        - @contents.each do |content|
+          li.content-box
+            article
+              h2 = link_to content.title, content
+              hr.waves-secondary
+              p
+                = truncate(content.description, length: 140)
+                //= content.category.name
 
-            ul.content-actions-list
-              li = link_to t('contents.index.edit'), edit_content_path(content) if is_admin?
-              li = link_to t('contents.index.destroy'), content, data: {:confirm => t('contents.index.confirm')}, :method => :delete if is_admin?
+              ul.content-actions-list
+                li = link_to t('contents.index.edit'), edit_content_path(content) if is_admin?
+                li = link_to t('contents.index.destroy'), content, data: {:confirm => t('contents.index.confirm')}, :method => :delete if is_admin?
 
-          .content-footer
-            .attachment
-              .icon 3
-            .attachment-label
-              label =t('contents.index.attachments')
-              = link_to t('contents.index.download'), '#'
+            .content-footer
+              .attachment
+                .icon 3
+              .attachment-label
+                label =t('contents.index.attachments')
+                = link_to t('contents.index.download'), '#'
+    - else
+      h2 Ooops!
+      h4 Esta categoria ainda não possui conteúdos cadastrados.
+      hr.waves-secondary
+      p
+        = "Tem sugestões sobre conteúdos? Entre em contato com a gente."
+        br
+        = "Envie um e-mail para contato@waterdb.com.br"
+        br
+        = link_to "Voltar", root_path
 
   .wrapper
     = link_to t('contents.index.new'), new_content_path, :class => 'button' if is_admin?

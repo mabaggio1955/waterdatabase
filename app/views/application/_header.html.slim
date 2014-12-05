@@ -12,6 +12,11 @@ header
             = link_to "Menu", "#", id: "menu"
           li
             = link_to "Logout", "/logout", id: "sign_out"
+          li
+            - if I18n.locale == :"pt-BR"
+              = link_to "Español", contents_path(locale: :es)
+            - else
+              = link_to "Português", contents_path(locale: nil)
       - else
         ul.user-nav-list
           li

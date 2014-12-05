@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get
+  match "/auth/failure" => "sessions#failure", as: :auth_failure, via: :get
+  match "/logout" => "sessions#destroy", as: :logout, via: :get
+  resources :sessions, only: [:create, :destroy]
+
   scope "(:locale)" do
     get 'pages/home'
 
@@ -14,11 +19,6 @@ Rails.application.routes.draw do
 
     root 'pages#home'
   end
-
-  match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get
-  match "/auth/failure" => "sessions#failure", as: :auth_failure, via: :get
-  match "/logout" => "sessions#destroy", as: :logout, via: :get
-  resources :sessions, only: [:create, :destroy]
 
   get '/:locale' => 'categories#index'
 end

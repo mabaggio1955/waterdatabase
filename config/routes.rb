@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :contents do
       resources :documents, only: [:destroy, :create]
     end
+
+    root 'pages#home'
   end
 
   match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get
@@ -18,6 +20,5 @@ Rails.application.routes.draw do
   match "/logout" => "sessions#destroy", as: :logout, via: :get
   resources :sessions, only: [:create, :destroy]
 
-  root 'pages#home'
   get '/:locale' => 'categories#index'
 end

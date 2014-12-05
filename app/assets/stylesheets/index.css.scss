@@ -9,10 +9,11 @@
   article {
     @include border-radius(5px 5px 0 0);
     background: white;
-    padding: 30px;
+    padding: 50px;
     text-align: center;
 
     p {
+      font-size: 18px;
       text-align: left;
     }
 
@@ -22,34 +23,41 @@
     }
   }
 
+  ul.content-actions-list {
+    display: block;
+    margin-bottom: 20px;
+    li {
+      border-right: 1px solid $light-gray;
+      display: inline-block;
+      padding: 0 10px;
+      &:last-of-type { border: 0; }
+    }
+  }
+
   .content-footer {
     @include border-radius(0 0 5px 5px);
     background: $light-gray;
-    padding: 30px;
+    padding: 50px;
     text-align: left;
   }
 }
 
 .content-list {
-  li {
+  li.content-box {
     @include span-columns(4);
     @include omega(3n);
 
     article {
+      padding: 30px;
       h2 {
         font-size: 22px;
         font-weight: bold;
       }
 
-      p { text-align: center; }
-
-      ul.content-actions-list {
-        display: block;
-        margin-bottom: 40px;
-        li {
-          display: inline-block;
-          margin: 0;
-        }
+      p {
+        font-size: 16px;
+        font-style: italic;
+        text-align: center;
       }
     }
 
@@ -84,7 +92,7 @@
         }
         a {
           display: block;
-          font-size: 12px;
+          font-size: 14px;
           margin-bottom: 0;
         }
       }

@@ -18,23 +18,23 @@ section.content-primary
         p
           = @content.description
 
+        ul.content-actions-list
+          li = link_to 'Edit', edit_content_path(@content)
+          li = link_to 'Back', contents_path
+        
+        = render partial: "document_js_tmpl"
+
       .content-footer
-        ul
+        ul.attachment-list
           - @content.documents.each do |document|
             li
               .attachment
                 .icon PDF
               .attachment-label
                 label = document.file_file_name
-                = link_to document.file_file_name, document.file.url, target: :_blank
-                = link_to "X", [@content, document], method: :delete, style: "color: red; margin-left: 20px;", data: { confirm: "Deseja remover o documento?" }
+                = link_to 'Baixar arquivo', document.file.url, target: :_blank
+                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: "Deseja remover o documento?" }, :class => 'button'
 
         = form_for [@content, Document.new] do |f|
           = f.s3_file_field :file
           = f.submit "Enviar arquivo"
-
-        = link_to 'Edit', edit_content_path(@content)
-        '|
-        = link_to 'Back', contents_path
-
-        = render partial: "document_js_tmpl"

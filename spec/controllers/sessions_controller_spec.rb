@@ -48,7 +48,7 @@ RSpec.describe SessionsController, :type => :controller do
         do_action
       end
       it { expect(session[:user_id]).to eq(user.id) }
-      it { expect(response).to redirect_to(contents_path) }
+      it { expect(response).to redirect_to(categories_path) }
     end
     context 'error' do
       before do

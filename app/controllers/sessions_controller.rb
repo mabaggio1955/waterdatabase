@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     if user.persisted?
       session[:user_id] = user.id
-      redirect_to contents_path, notice: "Bem-vindo!"
+      redirect_to categories_path, notice: "Bem-vindo!"
     else
       failure
     end

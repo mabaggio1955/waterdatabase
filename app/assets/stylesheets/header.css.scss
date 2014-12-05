@@ -2,29 +2,48 @@ header {
   background: image_url('bg-topbar.png') right center no-repeat, linear-gradient(to right, #1671b8, #89daf4);
 
   h1.logo {
-    background: image_url('waterdb-logo.svg') top center no-repeat;
     content: " ";
     display: block;
     float: left;
-    height: auto;
-    margin: 20px 0;
-    width: 150px;
+    height: 60px;
+    margin: 5px 0 5px 0;
+    width: 180px;
   }
 
   ul.user-nav-list {
     float: right;
-    margin: 20px 0;
+    margin: 14px 0;
+
     li {
       display: inline-block;
+      height: 42px;
       margin-left: 10px;
       padding: 0;
       position: relative;
+      vertical-align: middle;
+
+      p { margin-top: 6px; }
 
       &.menu-top {
-        .menu_icon { cursor: pointer; }
+        .menu_icon {
+          cursor: pointer;
+          margin-top: 10px;
+        }
 
         ul.user-nav-secondary {
-          @include border-radius(3px);
+          &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent white transparent;
+            position: absolute;
+            right: 5px;
+            top: -8px;
+          }
+
+          @include border-radius(5px);
           background: white;
           display: none;
           padding: 0 10px;

@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin?
-    ENV['ADMIN_USERS'].split(',').include?(current_user && current_user.email)
+    ENV['ADMIN_USERS'].split(',').include?(current_user.email)
   end
 
   def ensure_admin!

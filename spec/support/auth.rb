@@ -6,6 +6,7 @@ module AuthSpecHelper
   def login!
     session[:user_id] = current_user.id
   end
+
   def login_admin!
     session[:user_id] = current_user.id
     ENV['ADMIN_USERS'] = current_user.email
@@ -27,9 +28,10 @@ end
 
 RSpec.shared_examples_for "authentication_required_for_admin" do
   context "not signed as admin" do
+    before { login! }
     before { action }
 
-    it { expect(controller.is_admin?).to be false }
+    it { is_expected.to set_the_flash.to('Você não tem acesso a essa área') }
     it { is_expected.to redirect_to(root_path) }
   end
 end

@@ -64,7 +64,7 @@ RSpec.describe ApplicationController, :type => :controller do
         let!(:user) { create(:user, email: 'foo1@bar.com') }
 
         before do
-          expect(controller).to receive(:current_user)#.and_return(user)
+          expect(controller).to receive(:current_user).and_return(user)
         end
 
         it { expect(controller.is_admin?).to be true }
@@ -74,7 +74,7 @@ RSpec.describe ApplicationController, :type => :controller do
         let!(:user) { create(:user, email: 'lorem@bar.com') }
 
         before do
-          expect(controller).to receive(:current_user)#.and_return(user)
+          expect(controller).to receive(:current_user).and_return(user)
         end
 
         it { expect(controller.is_admin?).to be false }

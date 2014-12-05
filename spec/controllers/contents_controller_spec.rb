@@ -11,9 +11,7 @@ RSpec.describe ContentsController, :type => :controller do
     end
 
     context 'signed_in' do
-
       before { login! }
-
       before { action }
 
       it { is_expected.to respond_with(:success) }

@@ -7,7 +7,7 @@ header
     nav
       - if user_signed_in?
         ul.user-nav-list
-          li User name
+          li = current_user.name
           li
             .icon a
           li

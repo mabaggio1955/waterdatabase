@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   scope "(:locale)" do
-    get 'pages/dashboard'
     get 'pages/home'
 
     resources :contents do

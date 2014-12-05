@@ -30,6 +30,7 @@ RSpec.describe ContentsController, :type => :controller do
         it { is_expected.to respond_with(:success) }
         it { is_expected.to render_template(:index) }
         it { expect(assigns(:contents)).to match_array([content_2]) }
+        it { expect(assigns(:category)).to eq(category) }
       end
 
       context "contents from all categories" do

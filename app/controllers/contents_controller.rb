@@ -5,7 +5,12 @@ class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = params[:category_id].present? ? Content.where(category_id: params[:category_id]) : Content.all
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @contents = Content.where(category_id: params[:category_id])
+    else
+      @contents = Content.all
+    end
   end
 
   def show

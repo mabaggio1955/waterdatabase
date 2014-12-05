@@ -21,16 +21,19 @@
       color: $light-gray;
       font-size: 16px;
     }
-  }
 
-  ul.content-actions-list {
-    display: block;
-    margin-bottom: 20px;
-    li {
-      border-right: 1px solid $light-gray;
-      display: inline-block;
-      padding: 0 10px;
-      &:last-of-type { border: 0; }
+    hr.waves-secondary {
+      margin: 5px 30%;
+    }
+
+    ul.content-actions-list {
+      display: block;
+      li {
+        border-right: 1px solid $light-gray;
+        display: inline-block;
+        padding: 0 10px;
+        &:last-of-type { border: 0; }
+      }
     }
   }
 
@@ -59,6 +62,12 @@
         font-style: italic;
         text-align: center;
       }
+
+      hr.waves-secondary {
+        margin: 5px 25%;
+      }
+
+      ul.content-actions-list { margin-bottom: 20px; }
     }
 
     .content-footer {

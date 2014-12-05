@@ -1,12 +1,24 @@
 pt-BR:
   models_and_attributes: &models_and_attributes
-    # models:
-    #   event:
-    #     one: Evento
-    #     other: Eventos
-    # attributes:
-    #     event:
-    #       name: Nome
+    models:
+      document:
+        one: Documento
+        other: Documentos
+      category:
+        one: Categoria
+        other: Categorias
+      content:
+        one: Conteúdo
+        other: Conteúdos
+    attributes:
+        document:
+          file: Arquivo
+        category:
+          name: Nome
+        content:
+          title: Título
+          description: Descrição
+          category: Categoria
   activerecord:
     <<: *models_and_attributes
   activemodel:

@@ -67,13 +67,15 @@ nav.search-bar {
     }
 
     input[type='submit'] {
-      background: none;
+      background: image_url('icons/icon-search.svg') center no-repeat;
       border: none;
       margin: 0;
+      height: 20px;
       padding: 5px 8px;
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 5px;
+      top: 5px;
+      width: 20px;
     }
 
     &:after { @include cleaner; }

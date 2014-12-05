@@ -39,8 +39,8 @@ pt-BR:
       edit: 'Editar'
       destroy: 'Apagar'
       confirm: 'Você tem certeza?'
-      download: 'Baixar'
       attachments: 'Anexos'
+      show: Visualizar
     show:
       edit: Editar
       back: Voltar

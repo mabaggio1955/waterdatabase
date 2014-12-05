@@ -39,8 +39,8 @@ es:
       edit: 'Editar'
       destroy: 'Apagar'
       confirm: 'Estás seguro?'
-      download: 'Descargar'
       attachments: 'Adjuntos'
+      show: Visualizar
     show:
       edit: Editar
       back: Volver

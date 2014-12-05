@@ -25,10 +25,10 @@ section.content-primary
 
             .content-footer
               .attachment
-                .icon 3
+                .icon = content.documents.size
               .attachment-label
                 label =t('contents.index.attachments')
-                = link_to t('contents.index.download'), '#'
+                = link_to t('.show'), content
     - else
       h2 Ooops!
       h4 Esta categoria ainda não possui conteúdos cadastrados.

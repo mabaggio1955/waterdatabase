@@ -87,6 +87,17 @@ hr.waves-secondary {
   opacity: .15;
 }
 
+hr.down-waves {
+  background: image_url('gph-hr-down-wave-1.svg') center top repeat-x;
+  background-size: 100px auto;
+  border: none;
+  height: 25px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  opacity: .5;
+  width: 500px;
+}
+
 img,
 picture {
   margin: 0;

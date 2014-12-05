@@ -3,7 +3,8 @@ p#notice = notice
 header
   .wrapper
     h1.logo
-      = image_tag("waterdb-logo.svg" ,class: "menu_icon")
+      = link_to image_tag("waterdb-logo.svg" ,class: "menu_icon"), root_path
+
     nav
       - if user_signed_in?
         ul.user-nav-list

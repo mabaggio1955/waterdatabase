@@ -2,12 +2,15 @@ Rails.application.routes.draw do
   scope "(:locale)" do
     get 'pages/home'
 
+    resources :categories, only: [:show, :index] do
+      resources :contents do
+        resources :documents, only: [:destroy, :create]
+      end
+    end
+
     resources :contents do
       resources :documents, only: [:destroy, :create]
     end
-
-    resources :categories, only: [:index]
-
   end
 
   match "/auth/:provider/callback" => "sessions#create", as: :auth_callback, via: :get

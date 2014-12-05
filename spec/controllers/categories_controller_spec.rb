@@ -13,6 +13,7 @@ RSpec.describe CategoriesController, :type => :controller do
 
     it { expect(response).to have_http_status(:success) }
     it { expect(assigns(:categories)).to match_array(category) }
+    it { is_expected.to render_template(:index) }
   end
 
 end

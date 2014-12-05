@@ -18,8 +18,6 @@ html lang="pt"
     /![if lt IE 9]
       script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
 
-  body class=body_class
+  body#body-landing class=body_class
     = render 'flash_messages'
-    = render 'header'
     = yield
-    = render 'footer'

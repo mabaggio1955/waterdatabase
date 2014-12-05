@@ -9,7 +9,8 @@ RSpec.describe User, :type => :model do
         "name"       =>"João",
         "email"      =>"joao@helabs.com.br",
         "first_name" => "João",
-        "last_name"  =>"José"
+        "last_name"  =>"José",
+        "image" => "https://lh6.googleusercontent.com/-zkw3aimGDfo/AAAAAAAAAAI/AAAAAAAAABA/ZQLuDLgTLAs/photo.jpg"
       },
       "credentials" => {
         "token"         => "GDRIVE-TOKEN",

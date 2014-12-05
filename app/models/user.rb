@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
       email: auth.info.email,
       google_token: auth.credentials.token,
       oauth_expires_at: Time.at(auth.credentials.expires_at),
+      image_url: auth[:info][:image]
     })
     user.save
     user

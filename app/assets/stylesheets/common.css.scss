@@ -74,6 +74,12 @@ header {
   }
 }
 
+.headline {
+  .icon {
+    margin: 0 auto;
+  }
+}
+
 nav.search-bar {
   border-bottom: 1px dashed $medium-gray;
   border-top: 1px solid rgba(white,.25);

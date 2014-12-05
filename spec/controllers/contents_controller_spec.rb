@@ -1,17 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe ContentsController, :type => :controller do
+  let!(:content) { create(:content) }
+  let(:category) { content.category }
 
   describe "GET #index" do
-    let!(:content) { create(:content) }
-    let(:params) do
-      {}
-    end
-
     it_should_behave_like "authentication_required_action"
 
     def action
-      get :index, params
+      get :index, category_id: category.to_param
     end
 
     context 'signed_in' do
@@ -19,36 +16,20 @@ RSpec.describe ContentsController, :type => :controller do
       let!(:content_2) { create(:content, category: category) }
 
       before { login! }
+      before { action }
 
-      context "contents from a category" do
-        let(:params) do
-          { category_id: category.to_param }
-        end
-
-        before { action }
-
-        it { is_expected.to respond_with(:success) }
-        it { is_expected.to render_template(:index) }
-        it { expect(assigns(:contents)).to match_array([content_2]) }
-        it { expect(assigns(:category)).to eq(category) }
-      end
-
-      context "contents from all categories" do
-        before { action }
-
-        it { is_expected.to respond_with(:success) }
-        it { is_expected.to render_template(:index) }
-        it { expect(assigns(:contents)).to match_array([content, content_2]) }
-      end
+      it { is_expected.to respond_with(:success) }
+      it { is_expected.to render_template(:index) }
+      it { expect(assigns(:contents)).to match_array([content_2]) }
+      it { expect(assigns(:category)).to eq(category) }
     end
   end
 
   describe "GET #show" do
-    let!(:content) { create(:content) }
     it_should_behave_like "authentication_required_action"
 
     def action
-      get :show, id: content.to_param
+      get :show, id: content.to_param, category_id: category.to_param
     end
 
     context 'signed_in' do
@@ -65,7 +46,7 @@ RSpec.describe ContentsController, :type => :controller do
     it_should_behave_like "authentication_required_for_admin"
 
     def action
-      get :new
+      get :new, category_id: category.to_param
     end
 
     context 'signed_in_as_admin' do
@@ -79,11 +60,10 @@ RSpec.describe ContentsController, :type => :controller do
   end
 
   describe "GET #edit" do
-    let!(:content) { create(:content) }
     it_should_behave_like "authentication_required_for_admin"
 
     def action
-      get :edit, id: content.to_param
+      get :edit, id: content.to_param, category_id: category.to_param
     end
 
     context 'signed_in_as_admin' do
@@ -101,7 +81,7 @@ RSpec.describe ContentsController, :type => :controller do
     it_should_behave_like "authentication_required_for_admin"
 
     def action
-      post :create, content: params
+      post :create, content: params, category_id: category.to_param
     end
 
     context 'signed_in_as_admin' do
@@ -124,7 +104,7 @@ RSpec.describe ContentsController, :type => :controller do
 
         it do
           action
-          is_expected.to redirect_to(Content.last)
+          is_expected.to redirect_to([category, Content.last])
         end
 
         it do
@@ -147,12 +127,11 @@ RSpec.describe ContentsController, :type => :controller do
   end
 
   describe "PUT #update" do
-    let!(:content) { create(:content) }
     let(:params) { attributes_for(:content) }
     it_should_behave_like "authentication_required_for_admin"
 
     def action
-      put :update, id: content.to_param, content: params
+      put :update, id: content.to_param, content: params, category_id: category.to_param
     end
 
     context 'signed_in_as_admin' do
@@ -162,7 +141,7 @@ RSpec.describe ContentsController, :type => :controller do
         before { action }
 
         it { expect(assigns(:content)).to eq(content) }
-        it { is_expected.to redirect_to(content) }
+        it { is_expected.to redirect_to([category, content]) }
         it { is_expected.to set_the_flash.to('Content was successfully updated.') }
       end
 
@@ -181,11 +160,11 @@ RSpec.describe ContentsController, :type => :controller do
 
   describe "DELETE #destroy" do
     it_should_behave_like "authentication_required_for_admin"
-    let!(:content) { create(:content) }
 
     def action
-      delete :destroy, id: content.to_param
+      delete :destroy, id: content.to_param, category_id: category.to_param
     end
+
     context 'signed_in_as_admin' do
       before { login_admin! }
 
@@ -195,7 +174,7 @@ RSpec.describe ContentsController, :type => :controller do
 
       it do
         action
-        is_expected.to redirect_to(contents_url)
+        is_expected.to redirect_to([category, :contents])
       end
 
       it do

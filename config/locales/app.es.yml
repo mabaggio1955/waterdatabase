@@ -51,4 +51,6 @@ es:
     new:
       title: Nuevo contenido
       back: Volver
-
+    edit:
+      title: Editar contenido
+      back: Volver

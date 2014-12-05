@@ -8,6 +8,4 @@ section.content-primary
         == render 'form'
 
     .content-footer
-      = link_to t('.show'), @content
-      '|
-      = link_to t('.back'), contents_path
+      = link_to t('.back'),  [@category, @content]

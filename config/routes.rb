@@ -13,10 +13,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :contents do
-      resources :documents, only: [:destroy, :create]
-    end
-
     root 'pages#home'
   end
 

@@ -2,13 +2,14 @@ require 'rails_helper'
 
 RSpec.describe DocumentsController, :type => :controller do
   let(:content) { create(:content) }
+  let(:category) { content.category }
 
   describe "POST #create" do
     it_should_behave_like "authentication_required_action"
     let(:params) { attributes_for(:document) }
 
     def action
-      post :create, document: params, content_id: content.to_param
+      post :create, document: params, content_id: content.to_param, category_id: category.to_param
     end
 
     context 'signed_in' do
@@ -30,7 +31,7 @@ RSpec.describe DocumentsController, :type => :controller do
 
         it do
           action
-          is_expected.to redirect_to(content)
+          is_expected.to redirect_to([category, content])
         end
 
         it do
@@ -47,7 +48,7 @@ RSpec.describe DocumentsController, :type => :controller do
         before { action }
 
         it { expect(assigns(:document)).to be_a_new(Document) }
-        it { is_expected.to redirect_to(content) }
+        it { is_expected.to redirect_to([category, content]) }
       end
     end
   end
@@ -57,7 +58,7 @@ RSpec.describe DocumentsController, :type => :controller do
     let!(:document) { create(:document) }
 
     def action
-      delete :destroy, id: document.to_param, content_id: content.to_param
+      delete :destroy, id: document.to_param, content_id: content.to_param, category_id: category.to_param
     end
     context 'signed_in' do
       before { login! }
@@ -68,7 +69,7 @@ RSpec.describe DocumentsController, :type => :controller do
 
       it do
         action
-        is_expected.to redirect_to(content)
+        is_expected.to redirect_to([category, content])
       end
 
       it do

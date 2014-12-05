@@ -3,14 +3,10 @@ class ContentsController < ApplicationController
 
   before_action :ensure_admin!, only: [:new, :edit, :update, :create, :destroy]
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_category
 
   def index
-    if params[:category_id].present?
-      @category = Category.find(params[:category_id])
-      @contents = Content.where(category_id: params[:category_id])
-    else
-      @contents = Content.all
-    end
+    @contents = Content.where(category_id: params[:category_id])
   end
 
   def show
@@ -28,7 +24,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to [@category, @content], notice: 'Content was successfully created.' }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new }
@@ -40,7 +36,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to [@category, @content], notice: 'Content was successfully updated.' }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }
@@ -52,7 +48,7 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     respond_to do |format|
-      format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }
+      format.html { redirect_to [@category, :contents], notice: 'Content was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -60,6 +56,10 @@ class ContentsController < ApplicationController
   private
     def set_content
       @content = Content.find(params[:id])
+    end
+
+    def set_category
+      @category = Category.find(params[:category_id])
     end
 
     def content_params

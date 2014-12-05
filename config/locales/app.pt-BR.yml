@@ -51,3 +51,6 @@ pt-BR:
     new:
       title: Novo conteúdo
       back: Voltar
+    edit:
+      title: Editar conteúdo
+      back: Voltar

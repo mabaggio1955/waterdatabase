@@ -11,8 +11,8 @@ section.content-primary
           = @content.description
 
         ul.content-actions-list
-          li = link_to t('.edit'), edit_content_path(@content)
-          li = link_to t('.back'), contents_path
+          li = link_to t('.edit'), [:edit, @category, @content]
+          li = link_to t('.back'), [@category, :contents]
 
         = render partial: "document_js_tmpl"
 
@@ -27,10 +27,10 @@ section.content-primary
 
               .actions
                 = link_to 'Baixar arquivo', document.file.url, target: :_blank
-                = link_to "Excluir", [@content, document], method: :delete, data: { confirm: t('.confirm') }, :class => 'button alert'
+                = link_to "Excluir", [@category, @content, document], method: :delete, data: { confirm: t('.confirm') }, :class => 'button alert'
           li
             h3 = t('.choose_files')
-            = form_for [@content, Document.new], :html => {:class => 'form-attachment'} do |f|
+            = form_for [@category, @content, Document.new], :html => {:class => 'form-attachment'} do |f|
               .file-wrapper
                 = f.s3_file_field :file
               = f.submit

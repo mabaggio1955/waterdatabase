@@ -4,38 +4,38 @@ RSpec.describe ContentsController, :type => :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/contents").to route_to("contents#index")
-      expect(:get => "/pt-BR/contents").to route_to("contents#index", :locale => "pt-BR")
+      expect(:get => "/categories/2/contents").to route_to("contents#index", :category_id => "2")
+      expect(:get => "/pt-BR/categories/2/contents").to route_to("contents#index", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #new" do
-      expect(:get => "/contents/new").to route_to("contents#new")
-      expect(:get => "/pt-BR/contents/new").to route_to("contents#new", :locale => "pt-BR")
+      expect(:get => "/categories/2/contents/new").to route_to("contents#new", :category_id => "2")
+      expect(:get => "/pt-BR/categories/2/contents/new").to route_to("contents#new", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #show" do
-      expect(:get => "/contents/1").to route_to("contents#show", :id => "1")
-      expect(:get => "/pt-BR/contents/1").to route_to("contents#show", :id => "1", :locale => "pt-BR")
+      expect(:get => "/categories/2/contents/1").to route_to("contents#show", :id => "1", :category_id => "2")
+      expect(:get => "/pt-BR/categories/2/contents/1").to route_to("contents#show", :id => "1", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #edit" do
-      expect(:get => "/contents/1/edit").to route_to("contents#edit", :id => "1")
-      expect(:get => "/pt-BR/contents/1/edit").to route_to("contents#edit", :id => "1", :locale => "pt-BR")
+      expect(:get => "/categories/2/contents/1/edit").to route_to("contents#edit", :id => "1", :category_id => "2")
+      expect(:get => "/pt-BR/categories/2/contents/1/edit").to route_to("contents#edit", :id => "1", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #create" do
-      expect(:post => "/contents").to route_to("contents#create")
-      expect(:post => "/pt-BR/contents/").to route_to("contents#create", :locale => "pt-BR")
+      expect(:post => "/categories/2/contents").to route_to("contents#create", :category_id => "2")
+      expect(:post => "/pt-BR/categories/2/contents/").to route_to("contents#create", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #update" do
-      expect(:put => "/contents/1").to route_to("contents#update", :id => "1")
-      expect(:put => "/pt-BR/contents/1").to route_to("contents#update", :id => "1", :locale => "pt-BR")
+      expect(:put => "/categories/2/contents/1").to route_to("contents#update", :id => "1", :category_id => "2")
+      expect(:put => "/pt-BR/categories/2/contents/1").to route_to("contents#update", :id => "1", :locale => "pt-BR", :category_id => "2")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/contents/1").to route_to("contents#destroy", :id => "1")
-      expect(:delete => "/pt-BR/contents/1").to route_to("contents#destroy", :id => "1", :locale => "pt-BR")
+      expect(:delete => "/categories/2/contents/1").to route_to("contents#destroy", :id => "1", :category_id => "2")
+      expect(:delete => "/pt-BR/categories/2/contents/1").to route_to("contents#destroy", :id => "1", :locale => "pt-BR", :category_id => "2")
     end
   end
 end

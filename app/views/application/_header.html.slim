@@ -11,15 +11,16 @@ header
           li = current_user.name
           li
             .icon a
-          li
-            = link_to "Menu", "#", id: "menu"
-          li
-            = link_to "Logout", "/logout", id: "sign_out"
-          li
-            - if I18n.locale == :"pt-BR"
-              = link_to "Español", root_path(locale: :es)
-            - else
-              = link_to "Português", root_path(locale: nil)
+          li.menu-top
+            = image_tag("icons/icon-menu.svg", width: "20", heigh:"auto" ,class: "menu_icon")
+            ul.user-nav-secondary
+              li
+                = link_to "Logout", "/logout", id: "sign_out"
+              li
+                - if I18n.locale == :"pt-BR"
+                  = link_to "Español", root_path(locale: :es)
+                - else
+                  = link_to "Português", root_path(locale: nil)
       - else
         ul.user-nav-list
           li

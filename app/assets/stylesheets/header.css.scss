@@ -17,6 +17,27 @@ header {
     li {
       display: inline-block;
       margin-left: 10px;
+
+      &.menu-top {
+        .menu_icon { cursor: pointer; }
+
+        ul.user-nav-secondary {
+          @include border-radius(3px);
+          background: white;
+          display: none;
+          position: absolute;
+          right: 0;
+          z-index: 99;
+          li {
+            display: block;
+            padding: 10px;
+          }
+        }
+
+        &:hover {
+          ul.user-nav-secondary { display: block; }
+        }
+      }
     }
 
     &:after { @include cleaner; }

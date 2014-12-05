@@ -32,7 +32,7 @@ section.content-primary
                 = link_to "Excluir", [@content, document], method: :delete, data: { confirm: "Deseja remover o documento?" }, :class => 'button alert'
           li
             h3 Escolha anexos para esse conteúdo
-            = form_for [@content, Document.new] do |f|
+            = form_for [@content, Document.new], :html => {:class => 'form-attachment'} do |f|
               .file-wrapper
                 = f.s3_file_field :file
               = f.submit "Enviar arquivo"

@@ -13,7 +13,7 @@ input[type="submit"] {
 .button.alert,
 button.alert,
 input[type="submit"].alert {
-  background: #f3645d;
+  background: $alert-base-color;
   border: none;
   cursor: pointer;
   font-size: $base-font-size;
@@ -22,7 +22,7 @@ input[type="submit"].alert {
   vertical-align: middle;
   white-space: nowrap;
   &:hover {
-    background-color: lighten(#f3645d,5);
+    background-color: lighten($alert-base-color,5);
     color: white;
   }
 

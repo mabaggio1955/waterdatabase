@@ -48,4 +48,6 @@ pt-BR:
       confirm: Deseja remover o documento?
     document_js_tmpl:
       remove: Remover
-
+    new:
+      title: Novo conteúdo
+      back: Voltar

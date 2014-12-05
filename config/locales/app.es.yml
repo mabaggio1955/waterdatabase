@@ -48,4 +48,7 @@ es:
       confirm: ¿Quieres eliminar el documento?
     document_js_tmpl:
       remove: Quitar
+    new:
+      title: Nuevo contenido
+      back: Volver
 

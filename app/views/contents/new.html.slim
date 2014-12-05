@@ -1,5 +1,13 @@
-h1 New content
+= render 'search_bar'
 
-== render 'form'
+section.content-primary
+  .wrapper
+    .content-box
+      article
+        h1 = t('.title')
+        hr.waves-secondary
 
-= link_to 'Back', contents_path
+        == render 'form'
+
+    .content-footer
+      = link_to t('.back'), contents_path

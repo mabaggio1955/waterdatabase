@@ -12,5 +12,5 @@ section.dashboard
       - @categories.each do |category|
         li
           .icon
-            = image_tag("icons/icon-menu.svg", width: "24", heigh:"auto" ,class: "dashboard_icon")
+            = image_tag("icons/icon-events.svg" ,class: "dashboard-icon")
           = link_to category.name, [category, :contents]

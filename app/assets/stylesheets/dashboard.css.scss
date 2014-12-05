@@ -19,13 +19,19 @@ ul.dashboard-list {
     }
 
     .icon {
-      height: 60px;
+      height: 80px;
       margin: 0 auto;
       position: relative;
-      width: 60px;
+      width: 80px;
 
-      .dashboard_icon {
-        position: relative;
+      .dashboard-icon {
+        border: 0;
+        height: 80px;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        width: 80px;
       }
     }
   }

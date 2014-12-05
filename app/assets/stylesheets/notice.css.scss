@@ -1,3 +1,9 @@
-#notice {
+.flash-notice {
+  background: #ededdd;
+}
+
+#notice,
+#flash-notice {
   margin: 0;
+  padding: 20px 0;
 }

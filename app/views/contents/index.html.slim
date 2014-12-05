@@ -19,15 +19,15 @@ section.content-primary
               //= content.category.name
 
             ul.content-actions-list
-              li = link_to 'Edit', edit_content_path(content) if is_admin?
-              li = link_to 'Destroy', content, data: {:confirm => 'Are you sure?'}, :method => :delete if is_admin?
+              li = link_to t('contents.index.edit'), edit_content_path(content) if is_admin?
+              li = link_to t('contents.index.destroy'), content, data: {:confirm => t('contents.index.confirm')}, :method => :delete if is_admin?
 
           .content-footer
             .attachment
               .icon 3
             .attachment-label
-              label anexos
-              = link_to 'Fazer download', '#'
+              label =t('contents.index.attachments')
+              = link_to t('contents.index.download'), '#'
 
   .wrapper
-    = link_to 'New Content', new_content_path, :class => 'button' if is_admin?
+    = link_to t('contents.index.new'), new_content_path, :class => 'button' if is_admin?

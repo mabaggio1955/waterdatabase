@@ -35,4 +35,12 @@ pt-BR:
       padronizacao: Padronização
       treinamentos: Treinamentos
       o-certo-e-o-errado: O certo e o errado
+  contents:
+    index:
+      new: 'Novo Conteúdo'
+      edit: 'Editar'
+      destroy: 'Apagar'
+      confirm: 'Você tem certeza?'
+      download: 'Baixar'
+      attachments: 'Anexos'
 

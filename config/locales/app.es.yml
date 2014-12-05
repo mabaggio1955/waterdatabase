@@ -35,4 +35,12 @@ es:
       padronizacao: Estandarización
       treinamentos: Entrenamiento
       o-certo-e-o-errado: El bien y el mal
+  contents:
+    index:
+      new: 'Nuevos Contenidos'
+      edit: 'Editar'
+      destroy: 'Apagar'
+      confirm: 'Estás seguro?'
+      download: 'Descargar'
+      attachments: 'Adjuntos'
 

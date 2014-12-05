@@ -15,7 +15,7 @@ RSpec.describe ContentsController, :type => :controller do
     end
 
     context 'signed_in' do
-      let!(:category) { create(:category, name: "mycategory") }
+      let!(:category) { create(:category) }
       let!(:content_2) { create(:content, category: category) }
 
       before { login! }

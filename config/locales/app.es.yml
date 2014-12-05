@@ -1,4 +1,4 @@
-pt-BR:
+es:
   models_and_attributes: &models_and_attributes
     models:
       document:
@@ -26,13 +26,13 @@ pt-BR:
   categories:
     name:
       eventos: Eventos
-      inovacoes: Inovações
-      comunidade: Comunidade
-      especificacoes: Especificações
-      editora: Editora
-      noticias: Notícias
+      inovacoes: Las innovaciones
+      comunidade: Comunidad
+      especificacoes: Especificaciones
+      editora: Editorial
+      noticias: Noticias
       literatura: Literatura
-      padronizacao: Padronização
-      treinamentos: Treinamentos
-      o-certo-e-o-errado: O certo e o errado
+      padronizacao: Estandarización
+      treinamentos: Entrenamiento
+      o-certo-e-o-errado: El bien y el mal
 

@@ -34,6 +34,10 @@ pt-BR:
       treinamentos: Treinamentos
       o-certo-e-o-errado: O certo e o errado
   application:
+    header:
+      es_version: Versión española
+      logout: Sair
+      login: Faça login no Google
     footer:
       contact: Contato
       feedback: Para feedbacks, dúvidas ou sugestões, entre em contato com a gente!

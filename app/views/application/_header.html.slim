@@ -15,13 +15,13 @@ header
             = image_tag("icons/icon-menu.svg", width: "20", heigh:"auto" ,class: "menu_icon")
             ul.user-nav-secondary
               li
-                = link_to "Logout", "/logout", id: "sign_out"
+                = link_to t('.logout'), "/logout", id: "sign_out"
               li
                 - if I18n.locale == :"pt-BR"
-                  = link_to "Español", root_path(locale: :es)
+                  = link_to t('.es_version'), root_path(locale: :es)
                 - else
-                  = link_to "Português", root_path(locale: nil)
+                  = link_to t('.ptbr_version'), root_path(locale: nil)
       - else
         ul.user-nav-list
           li
-            = link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in"
+            = link_to t('.login'), "/auth/google_oauth2", id: "sign_in"

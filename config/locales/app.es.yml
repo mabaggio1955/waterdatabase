@@ -32,6 +32,11 @@ es:
       treinamentos: Entrenamiento
       o-certo-e-o-errado: El bien y el mal
   application:
+    header:
+      ptbr_version: Versão em português
+      es_version: Versión española
+      logout: Salir
+      login: Conéctate con Google
     footer:
       contact: Contacto
       feedback: Para comentarios, preguntas o sugerencias, por favor póngase en contacto con nosotros!

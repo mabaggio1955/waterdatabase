@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    user_signed_in? || redirect_to(root_path, notice: "Você precisa estar logado...")
+    user_signed_in? || redirect_to(root_path, notice: I18n.t("application.authenticate"))
   end
 
   def default_url_options(options={})
@@ -36,13 +36,13 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_admin!
-    redirect_to(root_path, notice: "Você não tem acesso a essa área") unless is_admin?
+    redirect_to(root_path, notice: I18n.t('application.ensure_admin')) unless is_admin?
   end
 
   def check_account_expired
     if current_user && !is_admin? && current_user.created_at < 30.days.ago
       session[:user_id] = nil
-      redirect_to root_path
+      redirect_to root_path, alert: I18n.t('application.account_expired')
     end
   end
 end

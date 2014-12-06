@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     if user.persisted?
       session[:user_id] = user.id
-      redirect_to categories_path, notice: "Bem-vindo!"
+      redirect_to categories_path, notice: I18n.t('sessions.create')
     else
       failure
     end
   end
 
   def failure
-    redirect_to root_path, alert: "Não foi possível autenticar."
+    redirect_to root_path, alert: I18n.t('sessions.failure')
   end
 
   def destroy

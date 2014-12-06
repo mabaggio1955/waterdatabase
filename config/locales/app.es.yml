@@ -41,6 +41,9 @@ es:
       contact: Contacto
       feedback: Para comentarios, preguntas o sugerencias, por favor póngase en contacto con nosotros!
       contact_email: 'Sólo tienes que enviar un correo electrónico a: mabaggio1955@gmail.com'
+    ensure_admin: Usted no tiene acceso a esta área
+    authenticate: Usted debe estar conectado ...
+    account_expired: Su cuenta ha expirado
   contents:
     index:
       new: 'Nuevos Contenidos'
@@ -78,3 +81,6 @@ es:
       features: Las especificaciones técnicas, manuales, publicaciones técnicas, últimas noticias de la zona y mucho más. Para acceder, basta con acceder con tu cuenta de Google. Disfrute!
       expiration_warning: 'Aviso! Su cuenta es gratuita durante un período de 30 días! Después de eso, póngase en contacto con nosotros a través del correo electrónico: mabaggio1955@gmail.com'
       ptbr_version: Versão em português
+  sessions:
+    failure: No se pudo autenticar.
+    create: ¡Bienvenido!

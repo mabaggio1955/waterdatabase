@@ -98,6 +98,7 @@ RSpec.describe ApplicationController, :type => :controller do
         end
 
         it { is_expected.to redirect_to(root_path) }
+        it { is_expected.to set_the_flash.to('Sua conta expirou') }
         it { expect(controller.current_user).to be nil }
       end
 

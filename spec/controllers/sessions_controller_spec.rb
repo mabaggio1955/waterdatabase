@@ -47,6 +47,7 @@ RSpec.describe SessionsController, :type => :controller do
         request.env["omniauth.auth"] = google_auth
         do_action
       end
+      it { expect(flash[:notice]).to eq("Bem vindo!") }
       it { expect(session[:user_id]).to eq(user.id) }
       it { expect(response).to redirect_to(categories_path) }
     end

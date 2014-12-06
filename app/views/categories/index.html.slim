@@ -3,49 +3,8 @@ hr.down-waves
 section.dashboard
   .wrapper
     ul.dashboard-list
-
-      li
-        .icon
-          = image_tag("icons/icon-eventos.svg" ,class: "dashboard-icon")
-          = "Nome"
-
-      li
-        .icon
-          = image_tag("icons/icon-inovacoes.svg" ,class: "dashboard-icon")
-          = "Nome"
-
-      li
-        .icon
-          = image_tag("icons/icon-comunidade.svg" ,class: "dashboard-icon")
-          = "Nome"
-
-      li
-        .icon
-          = image_tag("icons/icon-especificacoes.svg" ,class: "dashboard-icon")
-          = "Nome"
-
-      li
-        .icon
-          = image_tag("icons/icon-editora.svg" ,class: "dashboard-icon")
-          = "Nome"
-
-      li
-        .icon
-          = image_tag("icons/icon-padronizacao.svg" ,class: "dashboard-icon")
-          = "Nome"
-      li
-        .icon
-          = image_tag("icons/icon-noticias.svg" ,class: "dashboard-icon")
-          = "Nome"
-      li
-        .icon
-          = image_tag("icons/icon-literatura.svg" ,class: "dashboard-icon")
-          = "Nome"
-      li
-        .icon
-          = image_tag("icons/icon-o-certo-e-o-errado.svg" ,class: "dashboard-icon")
-          = "Nome"
-      li
-        .icon
-          = image_tag("icons/icon-treinamento.svg" ,class: "dashboard-icon")
-          = "Nome"
+      - @categories.each do |category|
+        li
+          .icon
+            = image_tag("icons/icon-treinamento.svg" ,class: "dashboard-icon")
+          = link_to category.name, [category, :contents]

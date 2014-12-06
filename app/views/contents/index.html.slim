@@ -29,14 +29,14 @@ section.content-primary
                 = link_to t('.show'), [@category, content]
     - else
       h2 Ooops!
-      h4 Esta categoria ainda não possui conteúdos cadastrados.
+      h4 = t('.category_without_content')
       hr.waves-secondary
       p
-        = "Tem sugestões sobre conteúdos? Entre em contato com a gente."
+        = t('.suggestions')
         br
-        = "Envie um e-mail para mabaggio1955@gmail.com"
+        = t('.send_email')
         br
-        = link_to "Voltar", root_path
+        = link_to t('.back'), root_path
 
   .wrapper
     = link_to t('contents.index.new'), new_category_content_path(@category), :class => 'button' if is_admin?

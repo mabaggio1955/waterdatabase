@@ -46,6 +46,10 @@ pt-BR:
       confirm: 'Você tem certeza?'
       attachments: 'Anexos'
       show: Visualizar
+      category_without_content: Esta categoria ainda não possui conteúdos cadastrados.
+      suggestions: Tem sugestões sobre conteúdos? Entre em contato com a gente.
+      send_email: Envie um e-mail para mabaggio1955@gmail.com
+      back: Voltar
     show:
       edit: Editar
       back: Voltar

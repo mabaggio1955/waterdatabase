@@ -44,6 +44,10 @@ es:
       confirm: 'Estás seguro?'
       attachments: 'Adjuntos'
       show: Visualizar
+      category_without_content: Esta categoría está contenido actualmente registrado.
+      suggestions: ¿Tienes alguna sugerencia sobre el contenido? Por favor, póngase en contacto con nosotros.
+      send_email: Enviar un correo electrónico a mabaggio1955@gmail.com
+      back: Volver
     show:
       edit: Editar
       back: Volver

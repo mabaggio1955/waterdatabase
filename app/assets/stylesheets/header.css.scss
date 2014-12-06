@@ -57,9 +57,34 @@ header {
           li {
             border-bottom: 1px solid $light-gray;
             display: block;
+            font-size: 12px;
+            height: auto;
+            line-height: 14px;
             margin: 0;
-            padding: 5px 20px;
+            padding: 10px;
+            position: relative;
+            width: 230px;
+            text-align: left;
+            
             &:last-of-type { border: 0; }
+
+            ul.user-nav-categories-list {
+              li {
+                border: 0;
+                display: inline-block;
+                margin-bottom: 10px;
+                padding: 0;
+                text-align: center;
+                width: 95px;
+
+                .icon {
+                  display: block;
+                  height: 40px;
+                  margin: 0 auto;
+                  width: 40px;
+                }
+              }
+            }
           }
         }
 

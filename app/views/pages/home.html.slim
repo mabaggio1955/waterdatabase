@@ -1,18 +1,23 @@
 section.landing-primary
   .wrapper
+    .translation-link
+      - if I18n.locale == :"pt-BR"
+        = link_to t('.es_version'), root_path(locale: :es)
+      - else
+        = link_to t('.ptbr_version'), root_path(locale: nil)
     = image_tag("waterdb-logo.svg", width: "300", heigh:"auto" ,class: "landing_icon")
-    
-    h1 O mais completo conteúdo online de engenharia hidráulica.
 
-    = link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:"button"
+    h1 = t('.title')
+
+    = link_to t('.login'), "/auth/google_oauth2", id: "sign_in", class:"button"
 
 section.landing-secondary
   .wrapper
     hr.waves-primary
 
-    p Especificações técnicas, manuais, literatura especializada, últimas notícias da área e muito mais. Para acessar, basta fazer o login com sua conta do Google. Aproveite!
+    p = t('.features')
 
-    small Atenção! Sua conta é gratuita por um período de 15 dias! Depois disso, entre em contato conosco através do e-mail: mabaggio1955@gmail.com
+    small = t('.expiration_warning')
 
 footer.landing-footer
   .wrapper
@@ -21,6 +26,6 @@ footer.landing-footer
     = image_tag("gph-categories.svg", width: "450", heigh:"auto" ,class: "landing_icon")
 
   .wrapper
-    small Contato
-    h4 Para feedbacks, dúvidas ou sugestões, entre em contato com a gente!
-    p Basta enviar um e-mail para: mabaggio1955@gmail.com
+    small = t('.contact')
+    h4 = t('.feedback')
+    p  = t('.contact_email')

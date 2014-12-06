@@ -1,0 +1,67 @@
+.landing-primary {
+  background: image_url('landing-bg-top.jpg');
+  background-size: cover;
+  padding: 40px 0 90px 0;
+
+  img { margin-bottom: 10px; }
+
+  h1 {
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 60%;
+  }
+  .button {
+    font-size: 20px;
+  }
+}
+
+.landing-secondary {
+  padding: 0;
+  position: relative;
+
+  p {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 60%;
+  }
+
+  hr.waves-primary {
+    margin-top: -42px;
+  }
+
+  small {
+    display: block;
+    font-size: 16px;
+    margin: 20px auto;
+    width: 60%;
+  }
+}
+
+.landing-footer {
+  background: image_url('bg-underwater.jpg') center 135px no-repeat;
+  border-bottom: 15px solid $deep-blue;
+  margin-top: 0;
+  padding: 0;
+  padding-bottom: 20px;
+
+  hr.waves-tertiary {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 360px;
+
+    background: image_url('gph-hr-wave-2.svg') center repeat-x;
+    background-size: 80px auto;
+    border: none;
+    height: 40px;
+    opacity: .15;
+  }
+
+  img {
+    height: auto;
+    margin-bottom: 20px;
+    width: 60%;
+  }
+}

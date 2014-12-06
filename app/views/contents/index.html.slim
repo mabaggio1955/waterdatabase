@@ -19,7 +19,7 @@ section.content-primary
 
               ul.content-actions-list
                 li = link_to t('contents.index.edit'), [:edit, @category, content] if is_admin?
-                li = link_to t('contents.index.destroy'), [:edit, @category, content], data: {:confirm => t('contents.index.confirm')}, :method => :delete if is_admin?
+                li = link_to t('contents.index.destroy'), [@category, content], data: {:confirm => t('contents.index.confirm')}, :method => :delete if is_admin?
 
             .content-footer
               .attachment

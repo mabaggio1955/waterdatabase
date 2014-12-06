@@ -21,6 +21,7 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.new(content_params)
+    @content.category = @category
 
     respond_to do |format|
       if @content.save

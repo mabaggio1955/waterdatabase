@@ -80,5 +80,77 @@ RSpec.describe ApplicationController, :type => :controller do
         it { expect(controller.is_admin?).to be false }
       end
     end
+
+    describe "account expiration" do
+
+      context "normal user expired " do
+        let!(:user) { create(:user, created_at: 31.days.ago) }
+
+        controller do
+          def index
+            render text: "ok"
+          end
+        end
+
+        before do
+          login! user
+          get :index
+        end
+
+        it { is_expected.to redirect_to(root_path) }
+        it { expect(controller.current_user).to be nil }
+      end
+
+      context "normal not expired user" do
+        let!(:user) { create(:user) }
+
+        controller do
+          def index
+            render text: "ok"
+          end
+        end
+
+        before do
+          login! user
+          get :index
+        end
+
+        it { expect(response.body).to eq("ok") }
+      end
+
+      context "admin user expired" do
+        let!(:user) { create(:user, created_at: 31.days.ago) }
+
+        controller do
+          def index
+            render text: "ok"
+          end
+        end
+
+        before do
+          login_admin! user
+          get :index
+        end
+
+        it { expect(response.body).to eq("ok") }
+      end
+
+      context "admin user not expired" do
+        let!(:user) { create(:user) }
+
+        controller do
+          def index
+            render text: "ok"
+          end
+        end
+
+        before do
+          login_admin! user
+          get :index
+        end
+
+        it { expect(response.body).to eq("ok") }
+      end
+    end
   end
 end

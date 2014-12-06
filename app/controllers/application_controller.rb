@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   ensure_security_headers # See more: https://github.com/twitter/secureheaders
   before_action :set_locale
+  before_action :check_account_expired
 
   helper_method :current_user, :user_signed_in?, :is_admin?
 
@@ -38,4 +39,10 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path, notice: "Você não tem acesso a essa área") unless is_admin?
   end
 
+  def check_account_expired
+    if current_user && !is_admin? && current_user.created_at < 30.days.ago
+      session[:user_id] = nil
+      redirect_to root_path
+    end
+  end
 end

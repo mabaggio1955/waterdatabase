@@ -3,13 +3,13 @@ module AuthSpecHelper
     @current_user ||= create(:user)
   end
 
-  def login!
-    session[:user_id] = current_user.id
+  def login!(user = current_user)
+    session[:user_id] = user.id
   end
 
-  def login_admin!
-    session[:user_id] = current_user.id
-    ENV['ADMIN_USERS'] = current_user.email
+  def login_admin!(user = current_user)
+    session[:user_id] = user.id
+    ENV['ADMIN_USERS'] = user.email
   end
 end
 

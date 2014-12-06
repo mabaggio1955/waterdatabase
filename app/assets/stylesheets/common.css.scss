@@ -29,6 +29,27 @@
   text-align: center;
 }
 
+.error_notification {
+  @include border-radius(5px);
+  background: $light-red;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.error {
+  color: $alert-base-color;
+  &:before {
+    content: "";
+    display: inline-block;
+    margin: 0 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 5px 0;
+    border-color: transparent $alert-base-color transparent transparent;
+  }
+}
+
 //Common styles
 .icon {
   @include border-radius(50%);
@@ -41,19 +62,23 @@
 }
 
 .headline {
+  border-bottom: 1px dashed $medium-gray;
+  margin-bottom: 20px;
   padding-top: 40px;
   position: relative;
   h1 { margin-bottom: 10px; }
   .icon-wrapper {
     background: image_url('gph-double-wave-1.svg') center no-repeat;
     left: 50%;  
-    margin-left: -75px;
+    margin-left: -80px;
     padding: 15px 0;
     position: absolute;
-    top: -38px;
-    width: 150px;
+    top: -45px;
+    width: 160px;
     .icon {
+      height: 60px;
       margin: 0 auto;
+      width: 60px;
     }
   }
 }

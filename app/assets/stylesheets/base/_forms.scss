@@ -1,3 +1,7 @@
+form {
+  text-align: left;
+}
+
 fieldset {
   background: lighten($base-border-color, 10);
   border: $base-border;
@@ -8,14 +12,41 @@ fieldset {
 input,
 label,
 select {
-  display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='mail'],
+input[type='search'] {
+  background: $light-gray;
+  display: inline-block;
+}
+
+//
+label.string,
+label.select {
+  width: 150px;
+}
+
+textarea { background: lighten($light-gray,10); }
+
+select.select { width: 400px; }
+
+input[type='text'].string {
+  background: lighten($light-gray,10);
+  display: inline-block;
+  width: 400px;
+}
+
 label {
+  display: inline-block;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: $base-spacing / 4;
+  margin-right: 10px;
+  text-transform: uppercase;
 
   &.required:after {
     content: "*";

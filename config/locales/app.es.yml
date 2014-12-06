@@ -11,12 +11,10 @@ es:
         one: Contenido
         other: Contenidos
     attributes:
-        document:
-          file: Arquivo
         content:
           title: Título
-          description: Descrição
-          category: Categoria
+          description: Descripción
+          category: Categoría
   activerecord:
     <<: *models_and_attributes
   activemodel:
@@ -44,6 +42,8 @@ es:
     show:
       edit: Editar
       back: Volver
+      remove: Quitar
+      download: Descargar
       choose_files: Elija los archivos adjuntos a este contenido
       confirm: ¿Quieres eliminar el documento?
     document_js_tmpl:

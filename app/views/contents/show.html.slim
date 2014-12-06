@@ -26,8 +26,8 @@ section.content-primary
               label = document.file_file_name
 
               .actions
-                = link_to 'Baixar arquivo', document.file.url, target: :_blank
-                = link_to "Excluir", [@category, @content, document], method: :delete, data: { confirm: t('.confirm') }, :class => 'button alert'
+                = link_to t('.download'), document.file.url, target: :_blank
+                = link_to t('.remove'), [@category, @content, document], method: :delete, data: { confirm: t('.confirm') }, :class => 'button alert'
           li
             h3 = t('.choose_files')
             = form_for [@category, @content, Document.new], :html => {:class => 'form-attachment'} do |f|

@@ -31,6 +31,11 @@ es:
       padronizacao: Estandarización
       treinamentos: Entrenamiento
       o-certo-e-o-errado: El bien y el mal
+  application:
+    footer:
+      contact: Contacto
+      feedback: Para comentarios, preguntas o sugerencias, por favor póngase en contacto con nosotros!
+      contact_email: 'Sólo tienes que enviar un correo electrónico a: mabaggio1955@gmail.com'
   contents:
     index:
       new: 'Nuevos Contenidos'

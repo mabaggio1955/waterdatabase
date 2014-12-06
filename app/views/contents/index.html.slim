@@ -3,7 +3,7 @@ section.headline
     .icon-wrapper
       .icon
         = image_tag("icons/icon-treinamentos.svg" ,class: "dashboard-icon")
-    h1 Category name
+    h1 = @category.name
 
 section.content-primary
   .wrapper
@@ -16,7 +16,6 @@ section.content-primary
               hr.waves-secondary
               p
                 = truncate(content.description, length: 140)
-                //= content.category.name
 
               ul.content-actions-list
                 li = link_to t('contents.index.edit'), [:edit, @category, content] if is_admin?

@@ -8,6 +8,14 @@ ul.dashboard-list {
     text-align: center;
     width: 150px;
 
+    &:hover {
+      a { color: white; }
+      img {
+        @include border-radius(50%);
+        box-shadow: 0px 3px 3px 5px rgba(black,.05);
+      }
+    }
+
     &:nth-child(5n+1){
       clear: left;
     }

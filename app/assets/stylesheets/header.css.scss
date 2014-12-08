@@ -52,19 +52,20 @@ header {
           display: none;
           padding: 0 10px;
           position: absolute;
-          right: -5px;
+          right: -6px;
+          top: 32px;
           z-index: 99;
           li {
             border-bottom: 1px solid $light-gray;
             display: block;
-            font-size: 12px;
+            font-size: 14px;
             height: auto;
             line-height: 14px;
             margin: 0;
             padding: 10px;
             position: relative;
-            width: 230px;
-            text-align: left;
+            width: 150px;
+            text-align: right;
             
             &:last-of-type { border: 0; }
 

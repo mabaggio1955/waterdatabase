@@ -12,7 +12,7 @@ section.content-primary
         - @contents.each do |content|
           li.content-box
             article
-              h2 = link_to content.title, [@category, content]
+              h2 = link_to truncate(content.title, length: 80), [@category, content]
               hr.waves-secondary
               p
                 = truncate(content.description, length: 140)

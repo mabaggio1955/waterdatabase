@@ -20,7 +20,8 @@ section.content-primary
           - @content.documents.each do |document|
             li
               .attachment
-                .icon PDF
+                .icon
+                  = image_tag("icons/icon-attachment.svg" ,class: "dashboard-icon")
 
               label = document.file_file_name
 

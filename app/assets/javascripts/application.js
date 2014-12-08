@@ -14,6 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require s3ff
-//= require functions
-//= require base
 //= require_tree .

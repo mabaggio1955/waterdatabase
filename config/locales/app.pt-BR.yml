@@ -64,6 +64,7 @@ pt-BR:
       download: Baixar
       choose_files: Escolha anexos para esse conteúdo
       confirm: Deseja remover o documento?
+      save_attachment: Salvar anexo
     document_js_tmpl:
       remove: Remover
     new:

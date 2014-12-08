@@ -22,7 +22,7 @@ es:
   categories:
     name:
       eventos: Eventos
-      inovacoes: Las innovaciones
+      inovacoes: Innovaciones
       comunidade: Comunidad
       especificacoes: Especificaciones
       editora: Editorial
@@ -30,7 +30,7 @@ es:
       literatura: Literatura
       padronizacao: Estandarización
       treinamentos: Entrenamiento
-      o-certo-e-o-errado: El bien y el mal
+      o-certo-e-o-errado: El bueno y lo malo
   application:
     header:
       ptbr_version: Versão em português
@@ -52,7 +52,7 @@ es:
       confirm: 'Estás seguro?'
       attachments: 'Adjuntos'
       show: Visualizar
-      category_without_content: Esta categoría está contenido actualmente registrado.
+      category_without_content: Esta categoría no tiene contenido actualmente registrado.
       suggestions: ¿Tienes alguna sugerencia sobre el contenido? Por favor, póngase en contacto con nosotros.
       send_email: Enviar un correo electrónico a mabaggio1955@gmail.com
       back: Volver
@@ -63,6 +63,7 @@ es:
       download: Descargar
       choose_files: Elija los archivos adjuntos a este contenido
       confirm: ¿Quieres eliminar el documento?
+      save_attachment: Guardar archivo adjunto
     document_js_tmpl:
       remove: Quitar
     new:

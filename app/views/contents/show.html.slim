@@ -41,4 +41,4 @@ section.content-primary
               = form_for [@category, @content, Document.new], :html => {:class => 'form-attachment'} do |f|
                 .file-wrapper
                   = f.s3_file_field :file
-                = f.submit
+                = f.submit t('.save_attachment')

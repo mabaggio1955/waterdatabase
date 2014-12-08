@@ -6,5 +6,5 @@ section.dashboard
       - @categories.each do |category|
         li
           .icon
-            = link_to image_tag("icons/icon-#{category.slug}.svg" ,class: "dashboard-icon"), [category, :contents]
+            = link_to image_tag("icons/icon-#{category.slug}.svg" ,class: "dashboard-icon", id: "dashboard-#{category.slug}"), [category, :contents]
           = link_to category.name, [category, :contents]

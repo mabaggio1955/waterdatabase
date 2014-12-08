@@ -2,7 +2,7 @@ section.headline
   .wrapper
     .icon-wrapper
       .icon
-        = image_tag("icons/icon-treinamentos.svg" ,class: "dashboard-icon")
+        = image_tag("icons/icon-#{@category.slug}.svg" ,class: "dashboard-icon")
     h1 = @category.name
 
 section.content-primary

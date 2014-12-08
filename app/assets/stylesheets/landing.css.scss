@@ -39,33 +39,44 @@
   small {
     display: block;
     font-size: 16px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
     width: 60%;
   }
 }
 
-.landing-footer {
-  background: image_url('bg-underwater.jpg') center 135px no-repeat;
-  border-bottom: 15px solid $deep-blue;
-  margin-top: 0;
+footer.landing-footer {
+  background: none;
   padding: 0;
-  padding-bottom: 20px;
 
-  hr.waves-tertiary {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 360px;
+  .landing-footer-primary {
+    background: image_url('bg-underwater.jpg') center 135px no-repeat;
+    margin-top: 0;
+    padding: 0;
+    padding-bottom: 20px;
 
-    background: image_url('gph-hr-wave-2.svg') center repeat-x;
-    background-size: 80px auto;
-    border: none;
-    height: 40px;
-    opacity: .15;
+    hr.waves-tertiary {
+      background: image_url('gph-hr-wave-2.svg') center repeat-x;
+      background-size: 80px auto;
+      border: none;
+      height: 40px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      opacity: .15;
+      width: 360px;
+    }
+
+    img {
+      height: auto;
+      margin-bottom: 20px;
+      width: 60%;
+    }
   }
 
-  img {
-    height: auto;
-    margin-bottom: 20px;
-    width: 60%;
+  .landing-footer-secondary {
+    background: darken($deep-blue,10);
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    h4 { color: white; }
   }
 }

@@ -20,12 +20,14 @@ section.landing-secondary
     small = t('.expiration_warning')
 
 footer.landing-footer
-  .wrapper
-    hr.waves-tertiary
+  section.landing-footer-primary
+    .wrapper
+      hr.waves-tertiary
 
-    = image_tag("gph-categories.svg", width: "450", heigh:"auto" ,class: "landing_icon")
+      = image_tag("gph-categories.svg", width: "450", heigh:"auto" ,class: "landing_icon")
 
-  .wrapper
-    small = t('.contact')
-    h4 = t('.feedback')
-    p  = t('.contact_email')
+  section.landing-footer-secondary
+    .wrapper
+      small = t('.contact')
+      h4 = t('.feedback')
+      p  = t('.contact_email')

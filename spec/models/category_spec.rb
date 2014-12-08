@@ -44,7 +44,7 @@ RSpec.describe Category, :type => :model do
       let(:expected_es) do
         [
           "Eventos",
-          "Las innovaciones",
+          "Innovaciones",
           "Comunidad",
           "Especificaciones",
           "Editorial",
@@ -52,7 +52,7 @@ RSpec.describe Category, :type => :model do
           "Literatura",
           "Estandarización",
           "Entrenamiento",
-          "El bien y el mal"
+          "El bueno y lo malo"
         ]
       end
 

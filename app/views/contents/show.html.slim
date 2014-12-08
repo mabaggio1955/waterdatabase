@@ -40,5 +40,5 @@ section.content-primary
               h3 = t('.choose_files')
               = form_for [@category, @content, Document.new], :html => {:class => 'form-attachment'} do |f|
                 .file-wrapper
-                  = f.s3_file_field :file
+                  = f.s3_file_field :file, required: true
                 = f.submit t('.save_attachment')
